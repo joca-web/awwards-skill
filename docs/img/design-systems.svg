@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1264" height="330" viewBox="0 0 1264 330" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<rect width="1264" height="330" rx="18" fill="#F6F7F9"/>
+<g transform="translate(24,24)">
+<rect width="232" height="282" rx="14" fill="#F5F5F7" stroke="#D5D8DE"/>
+<text x="16" y="30" font-size="16" font-weight="700" fill="#1D1D1F">Apple HIG</text>
+<text x="16" y="50" font-size="12" fill="#6E6E73">claro</text>
+<rect x="16" y="60" width="42" height="42" rx="10" fill="#FFFFFF" stroke="#0000001f"/>
+<text x="37" y="118" font-size="9.5" text-anchor="middle" fill="#6E6E73">bg</text>
+<rect x="66" y="60" width="42" height="42" rx="10" fill="#F5F5F7" stroke="#0000001f"/>
+<text x="87" y="118" font-size="9.5" text-anchor="middle" fill="#6E6E73">surface</text>
+<rect x="116" y="60" width="42" height="42" rx="10" fill="#1D1D1F" stroke="#0000001f"/>
+<text x="137" y="118" font-size="9.5" text-anchor="middle" fill="#6E6E73">text</text>
+<rect x="166" y="60" width="42" height="42" rx="10" fill="#0071E3" stroke="#0000001f"/>
+<text x="187" y="118" font-size="9.5" text-anchor="middle" fill="#6E6E73">accent</text>
+<rect x="16" y="132" width="200" height="64" rx="12" fill="#000000"/>
+<text x="28" y="153" font-size="12" fill="#A1A1A6">escuro</text>
+<rect x="28" y="160" width="40" height="26" rx="8" fill="#1D1D1F"/>
+<rect x="78" y="160" width="40" height="26" rx="8" fill="#F5F5F7"/>
+<rect x="128" y="160" width="40" height="26" rx="8" fill="#0071E3"/>
+<rect x="16" y="214" width="200" height="36" rx="12" fill="#0071E3"/>
+<text x="116.0" y="237" font-size="14" font-weight="600" text-anchor="middle" fill="#FFFFFF">Botão</text>
+<text x="16" y="270" font-size="11" fill="#6E6E73">raio 12px · controle 44px</text>
+</g>
+<g transform="translate(270,24)">
+<rect width="232" height="282" rx="14" fill="#F3EDF7" stroke="#D5D8DE"/>
+<text x="16" y="30" font-size="16" font-weight="700" fill="#1D1B20">Google Material 3</text>
+<text x="16" y="50" font-size="12" fill="#49454F">claro</text>
+<rect x="16" y="60" width="42" height="42" rx="10" fill="#FEF7FF" stroke="#0000001f"/>
+<text x="37" y="118" font-size="9.5" text-anchor="middle" fill="#49454F">bg</text>
+<rect x="66" y="60" width="42" height="42" rx="10" fill="#F3EDF7" stroke="#0000001f"/>
+<text x="87" y="118" font-size="9.5" text-anchor="middle" fill="#49454F">surface</text>
+<rect x="116" y="60" width="42" height="42" rx="10" fill="#1D1B20" stroke="#0000001f"/>
+<text x="137" y="118" font-size="9.5" text-anchor="middle" fill="#49454F">text</text>
+<rect x="166" y="60" width="42" height="42" rx="10" fill="#6750A4" stroke="#0000001f"/>
+<text x="187" y="118" font-size="9.5" text-anchor="middle" fill="#49454F">accent</text>
+<rect x="16" y="132" width="200" height="64" rx="12" fill="#141218"/>
+<text x="28" y="153" font-size="12" fill="#CAC4D0">escuro</text>
+<rect x="28" y="160" width="40" height="26" rx="8" fill="#211F26"/>
+<rect x="78" y="160" width="40" height="26" rx="8" fill="#E6E0E9"/>
+<rect x="128" y="160" width="40" height="26" rx="8" fill="#D0BCFF"/>
+<rect x="16" y="214" width="200" height="36" rx="12" fill="#6750A4"/>
+<text x="116.0" y="237" font-size="14" font-weight="600" text-anchor="middle" fill="#FFFFFF">Botão</text>
+<text x="16" y="270" font-size="11" fill="#49454F">raio 12px · controle 40px</text>
+</g>
+<g transform="translate(516,24)">
+<rect width="232" height="282" rx="14" fill="#FAFAFA" stroke="#D5D8DE"/>
+<text x="16" y="30" font-size="16" font-weight="700" fill="#242424">Microsoft Fluent 2</text>
+<text x="16" y="50" font-size="12" fill="#616161">claro</text>
+<rect x="16" y="60" width="42" height="42" rx="10" fill="#FFFFFF" stroke="#0000001f"/>
+<text x="37" y="118" font-size="9.5" text-anchor="middle" fill="#616161">bg</text>
+<rect x="66" y="60" width="42" height="42" rx="10" fill="#FAFAFA" stroke="#0000001f"/>
+<text x="87" y="118" font-size="9.5" text-anchor="middle" fill="#616161">surface</text>
+<rect x="116" y="60" width="42" height="42" rx="10" fill="#242424" stroke="#0000001f"/>
+<text x="137" y="118" font-size="9.5" text-anchor="middle" fill="#616161">text</text>
+<rect x="166" y="60" width="42" height="42" rx="10" fill="#0F6CBD" stroke="#0000001f"/>
+<text x="187" y="118" font-size="9.5" text-anchor="middle" fill="#616161">accent</text>
+<rect x="16" y="132" width="200" height="64" rx="12" fill="#292929"/>
+<text x="28" y="153" font-size="12" fill="#ADADAD">escuro</text>
+<rect x="28" y="160" width="40" height="26" rx="8" fill="#1F1F1F"/>
+<rect x="78" y="160" width="40" height="26" rx="8" fill="#FFFFFF"/>
+<rect x="128" y="160" width="40" height="26" rx="8" fill="#2174C9"/>
+<rect x="16" y="214" width="200" height="36" rx="4" fill="#0F6CBD"/>
+<text x="116.0" y="237" font-size="14" font-weight="600" text-anchor="middle" fill="#FFFFFF">Botão</text>
+<text x="16" y="270" font-size="11" fill="#616161">raio 4px · controle 32px</text>
+</g>
+<g transform="translate(762,24)">
+<rect width="232" height="282" rx="14" fill="#F8F8F8" stroke="#D5D8DE"/>
+<text x="16" y="30" font-size="16" font-weight="700" fill="#292A2E">Atlassian</text>
+<text x="16" y="50" font-size="12" fill="#505258">claro</text>
+<rect x="16" y="60" width="42" height="42" rx="10" fill="#FFFFFF" stroke="#0000001f"/>
+<text x="37" y="118" font-size="9.5" text-anchor="middle" fill="#505258">bg</text>
+<rect x="66" y="60" width="42" height="42" rx="10" fill="#F8F8F8" stroke="#0000001f"/>
+<text x="87" y="118" font-size="9.5" text-anchor="middle" fill="#505258">surface</text>
+<rect x="116" y="60" width="42" height="42" rx="10" fill="#292A2E" stroke="#0000001f"/>
+<text x="137" y="118" font-size="9.5" text-anchor="middle" fill="#505258">text</text>
+<rect x="166" y="60" width="42" height="42" rx="10" fill="#1868DB" stroke="#0000001f"/>
+<text x="187" y="118" font-size="9.5" text-anchor="middle" fill="#505258">accent</text>
+<rect x="16" y="132" width="200" height="64" rx="12" fill="#1F1F21"/>
+<text x="28" y="153" font-size="12" fill="#96999E">escuro</text>
+<rect x="28" y="160" width="40" height="26" rx="8" fill="#18191A"/>
+<rect x="78" y="160" width="40" height="26" rx="8" fill="#CECFD2"/>
+<rect x="128" y="160" width="40" height="26" rx="8" fill="#669DF1"/>
+<rect x="16" y="214" width="200" height="36" rx="6" fill="#1868DB"/>
+<text x="116.0" y="237" font-size="14" font-weight="600" text-anchor="middle" fill="#FFFFFF">Botão</text>
+<text x="16" y="270" font-size="11" fill="#505258">raio 6px · controle 32px</text>
+</g>
+<g transform="translate(1008,24)">
+<rect width="232" height="282" rx="14" fill="#F3F3F3" stroke="#D5D8DE"/>
+<text x="16" y="30" font-size="16" font-weight="700" fill="#181818">Salesforce SLDS</text>
+<text x="16" y="50" font-size="12" fill="#444444">claro</text>
+<rect x="16" y="60" width="42" height="42" rx="10" fill="#FFFFFF" stroke="#0000001f"/>
+<text x="37" y="118" font-size="9.5" text-anchor="middle" fill="#444444">bg</text>
+<rect x="66" y="60" width="42" height="42" rx="10" fill="#F3F3F3" stroke="#0000001f"/>
+<text x="87" y="118" font-size="9.5" text-anchor="middle" fill="#444444">surface</text>
+<rect x="116" y="60" width="42" height="42" rx="10" fill="#181818" stroke="#0000001f"/>
+<text x="137" y="118" font-size="9.5" text-anchor="middle" fill="#444444">text</text>
+<rect x="166" y="60" width="42" height="42" rx="10" fill="#0176D3" stroke="#0000001f"/>
+<text x="187" y="118" font-size="9.5" text-anchor="middle" fill="#444444">accent</text>
+<rect x="16" y="132" width="200" height="64" rx="12" fill="#181818"/>
+<text x="28" y="153" font-size="12" fill="#C9C9C9">escuro</text>
+<rect x="28" y="160" width="40" height="26" rx="8" fill="#232323"/>
+<rect x="78" y="160" width="40" height="26" rx="8" fill="#F3F3F3"/>
+<rect x="128" y="160" width="40" height="26" rx="8" fill="#0176D3"/>
+<rect x="16" y="214" width="200" height="36" rx="4" fill="#0176D3"/>
+<text x="116.0" y="237" font-size="14" font-weight="600" text-anchor="middle" fill="#FFFFFF">Botão</text>
+<text x="16" y="270" font-size="11" fill="#444444">raio 0.25rem · controle 2rem</text>
+</g>
+</svg>
