@@ -1,68 +1,72 @@
 <p align="center">
-  <img src="docs/img/banner.svg" alt="awwards-skill: sites nível Awwwards e 3D profissional, sem Blender" width="100%">
+  <img src="docs/img/banner.svg" alt="awwards-skill: Awwwards-level websites and professional 3D, no Blender" width="100%">
 </p>
 
 <p align="center">
-  <img alt="Skill para Claude" src="https://img.shields.io/badge/skill-Claude-D97757?style=flat-square">
+  <a href="README.pt-BR.md">Português</a> · <b>English</b>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue?style=flat-square"></a>
+  <img alt="Claude skill" src="https://img.shields.io/badge/skill-Claude-D97757?style=flat-square">
   <img alt="Design systems" src="https://img.shields.io/badge/design%20systems-5-1868DB?style=flat-square">
-  <img alt="Contraste WCAG" src="https://img.shields.io/badge/tokens-WCAG%20AA-2E7D32?style=flat-square">
-  <img alt="Node" src="https://img.shields.io/badge/node-testado%20na%20v22-5FA04E?style=flat-square">
-  <img alt="Sem Blender" src="https://img.shields.io/badge/Blender-s%C3%B3%20se%20voc%C3%AA%20pedir-F5792A?style=flat-square">
+  <img alt="WCAG AA tokens" src="https://img.shields.io/badge/tokens-WCAG%20AA-2E7D32?style=flat-square">
+  <img alt="Blender only on request" src="https://img.shields.io/badge/Blender-only%20if%20you%20ask-F5792A?style=flat-square">
 </p>
 
 <p align="center">
-  <b>Direção de arte, scroll storytelling, design systems verificados e um estúdio 3D em código.</b><br>
-  Uma skill que decide, registra e confere cada escolha, em vez de só gerar pixels bonitos.
+  <b>Art direction, scroll storytelling, verified design systems and a code-first 3D studio.</b><br>
+  A Claude skill that decides, records and checks every choice instead of just generating pretty pixels.
 </p>
 
 ---
 
-## O que é
+## What it is
 
-`awwards-skill` fica por cima das skills `incridible-skill` e `incridible-skill-3d` (componentes GSAP, starters, inspetor em navegador real, palco Three.js) e acrescenta as camadas que separam um site correto de um site premiável:
+`awwwards-skill` sits on top of the `incridible-skill` and `incridible-skill-3d` skills (GSAP components, starters, a real-browser inspector, a Three.js stage) and adds the layers that separate a correct website from an award-worthy one:
 
-| Camada | O que faz |
+| Layer | What it does |
 |---|---|
-| **Taste** | Inventário do cliente, três direções, uma frase-ideia, um momento-assinatura e um gate contra o "visual de template". |
-| **Scroll craft** | Beats de scroll, estruturas de página, pins, sequências de quadros, câmera 3D, orçamentos e fallbacks. |
-| **Graft** | Portar um recurso de um repositório público do GitHub só depois de passar por um gate de licença, escopo, stack, qualidade e manutenção. |
-| **Graphify** | Mapear o site ou repositório antes de mexer (`scripts/codegraph.mjs`, funciona offline). |
-| **5 design systems** | Apple, Google, Fluent 2, Atlassian e Salesforce num mesmo contrato de tokens, com um seletor que escolhe o melhor para cada configuração. |
-| **Atelier 3D** | Modelagem por campos de distância, texturas PBR, LODs, silhueta para malha e exportação `.glb`, só com Node. |
+| **Taste** | Client inventory, three art directions, one idea sentence, one signature moment, and an anti-"template look" gate. |
+| **Scroll craft** | Scroll beats, page structures, pins, frame sequences, 3D camera moves, budgets and fallbacks. |
+| **Graft** | Port a feature from a public GitHub repo only after a licence, scope, stack, quality and maintenance gate. |
+| **Graphify** | Map a site or repo before touching it (`scripts/codegraph.mjs`, works offline). |
+| **5 design systems** | Apple, Google, Fluent 2, Atlassian and Salesforce behind one token contract, plus a selector that picks the best fit for the site. |
+| **Atelier 3D** | Signed-distance modelling, PBR texture baking, LODs, silhouette-to-mesh and `.glb` export. Node only. |
 
-## Como funciona
+## How it works
 
 ```mermaid
 flowchart LR
-  A["Intake<br/>+ Graphify"] --> B["Taste<br/>ideia e direção"]
-  B --> C["Design system<br/>seletor"]
+  A["Intake<br/>+ Graphify"] --> B["Taste<br/>idea and direction"]
+  B --> C["Design system<br/>selector"]
   C --> D["Scroll craft<br/>beats"]
-  D --> E["Assets<br/>Atelier 3D · imagens"]
-  E --> F["Build em camadas<br/>estático → movimento → 3D"]
+  D --> E["Assets<br/>Atelier 3D · images"]
+  E --> F["Layered build<br/>static → motion → 3D"]
   F --> G{"Gate"}
-  G -- "falhou" --> F
-  G -- "passou" --> H["Relatório<br/>honesto"]
+  G -- "failed" --> F
+  G -- "passed" --> H["Honest<br/>report"]
 ```
 
-Toda decisão é escrita em `.apex/decisions.md`: a frase-ideia, o design system escolhido, os beats de scroll e a rota de cada modelo 3D. O gate roda o inspetor em 1440, 768 e 390 px com scroll real, a auditoria de contraste e o self-test do 3D antes de qualquer "pronto".
+Every decision is written to `.apex/decisions.md`: the idea sentence, the chosen design system, the scroll beats and the route for each 3D model. The gate runs a real-browser inspector at 1440, 768 and 390 px with real scrolling, a contrast audit and the 3D self-test before anything is called done.
 
-## Cinco design systems, um contrato
+## Five design systems, one contract
 
-Todos expõem as mesmas variáveis CSS `--ds-*`. Trocar de sistema é trocar **um arquivo** (`tokens.css`). Claro por padrão, escuro por `[data-theme="dark"]` ou `prefers-color-scheme`.
+All five expose the same `--ds-*` CSS variables. Switching system means swapping **one file** (`tokens.css`). Light by default; dark through `[data-theme="dark"]` or `prefers-color-scheme`.
 
 <p align="center">
-  <img src="docs/img/design-systems.svg" alt="Paleta clara e escura dos cinco design systems" width="100%">
+  <img src="docs/img/design-systems.svg" alt="Light and dark palettes of the five design systems" width="100%">
 </p>
 
-| Sistema | Melhor para | Referência |
+| System | Best for | Notes |
 |---|---|---|
-| Apple HIG | Marketing, portfólio, e-commerce com imagem forte, 3D de produto | [`ds/apple.md`](references/ds/apple.md) |
-| Google Material 3 | Fluxos de consumo, educação, mobile web | [`ds/google.md`](references/ds/google.md) |
-| Microsoft Fluent 2 | Dashboards, admin, fintech, saúde | [`ds/fluent2.md`](references/ds/fluent2.md) |
-| Atlassian | Colaboração, documentação, devtools | [`ds/atlassian.md`](references/ds/atlassian.md) |
-| Salesforce SLDS | CRM, ERP, telas de registro e formulários longos | [`ds/salesforce.md`](references/ds/salesforce.md) |
+| Apple HIG | Marketing, portfolios, image-led commerce, 3D product pages | [`ds/apple.md`](references/ds/apple.md) |
+| Google Material 3 | Consumer flows, education, mobile web | [`ds/google.md`](references/ds/google.md) |
+| Microsoft Fluent 2 | Dashboards, admin, fintech, healthcare | [`ds/fluent2.md`](references/ds/fluent2.md) |
+| Atlassian | Collaboration, docs, devtools | [`ds/atlassian.md`](references/ds/atlassian.md) |
+| Salesforce SLDS | CRM, ERP, record pages, long forms | [`ds/salesforce.md`](references/ds/salesforce.md) |
 
-**O seletor** pontua o sistema primário e diz o que emprestar dos outros. Só mecanismos entram, nunca cores, fontes ou raios, para o site não parecer "montado":
+**The selector** scores a primary system and says what to borrow from the others. Only mechanisms are borrowed, never colours, fonts or radii, so the site never looks assembled:
 
 ```console
 $ node scripts/pick-design-system.mjs --type marketing --audience consumer --density airy \
@@ -77,89 +81,93 @@ Borrow (mechanisms only):
   - focus and accessibility: from Microsoft Fluent 2: two-ring focus outline, forced-colors support
 ```
 
-Todos os tokens passam em `scripts/contrast-check.mjs` (texto 4.5:1, interface 3:1, nos temas claro e escuro).
+Every token file passes `scripts/contrast-check.mjs` (text 4.5:1, UI 3:1, light and dark).
 
-## Atelier: 3D profissional em código, sem Blender
+## Atelier: professional 3D in code, no Blender
 
-Descreva o objeto como um campo de distância (SDF) e uma função de material por texel. O Atelier faz o resto: malha, UVs, AO e curvatura medidos no campo, texturas PBR (albedo, ORM, normal map), LODs e `.glb`.
+Describe an object as a signed-distance field (SDF) plus a per-texel material function. Atelier does the rest: mesh, UVs, AO and curvature measured on the field, PBR textures (albedo, ORM, normal map), LODs and `.glb`.
 
 <table>
   <tr>
-    <td align="center"><img src="docs/img/speaker.jpg" width="260" alt="Alto-falante com grade perfurada"><br><sub>Produto: 155 mil triângulos, 5,6 MB</sub></td>
-    <td align="center"><img src="docs/img/speaker-clay.jpg" width="260" alt="Alto-falante em argila"><br><sub>A forma em argila, sem textura</sub></td>
-    <td align="center"><img src="docs/img/creature.jpg" width="260" alt="Personagem estilo designer toy"><br><sub>Personagem: 113 mil triângulos, 4,3 MB</sub></td>
+    <td align="center"><img src="docs/img/speaker.jpg" width="260" alt="Smart speaker with a perforated grille"><br><sub>Product: 155k triangles, 5.6 MB</sub></td>
+    <td align="center"><img src="docs/img/speaker-clay.jpg" width="260" alt="The same speaker in clay"><br><sub>The shape in clay, no textures</sub></td>
+    <td align="center"><img src="docs/img/creature.jpg" width="260" alt="Designer-toy character"><br><sub>Character: 113k triangles, 4.3 MB</sub></td>
   </tr>
 </table>
 
-<sub>Renders do previewer em software, feitos para revisão de forma e material. O visual final de produção vem do Three.js da `incridible-skill-3d`.</sub>
+<sub>Renders from the software previewer, made to review shape and material. The final production look comes from Three.js in `incridible-skill-3d`.</sub>
 
 ```bash
 node scripts/atelier/atelier.mjs build scripts/atelier/models/speaker.mjs --lods 40000,12000
-node scripts/atelier/atelier.mjs hull frente.png lado.png --height 1 --section round   # silhuetas → malha
+node scripts/atelier/atelier.mjs hull front.png side.png --height 1 --section round   # silhouettes → mesh
 node scripts/atelier/atelier.mjs preview .apex/models/speaker.glb --clay
 ```
 
-**Escada de rotas:** modelo em código → silhueta para malha → gerador externo (Tripo-class) + limpeza → Blender **somente** se você pedir.
+**Route ladder:** model in code → silhouettes to mesh → external generator (Tripo-class) + cleanup → Blender **only** if you ask for it.
 
-## Instalação
+## Install
 
-Copie esta pasta para o diretório de skills do Claude:
+Copy this folder into your Claude skills directory:
 
 ```bash
 git clone https://github.com/joca-web/awwards-skill ~/.claude/skills/awwards-skill
 ```
 
-A raiz do repositório já é a pasta da skill (`SKILL.md` na raiz). Requer Node.js (testado na v22). Para o melhor resultado, instale também `incridible-skill` e `incridible-skill-3d`, que a skill carrega e reaproveita; sem elas, o seletor, os tokens, o Atelier, o `codegraph` e a auditoria de contraste continuam funcionando.
+The repository root is the skill folder (`SKILL.md` at the root). Requires Node.js (tested on v22). For the best results also install `incridible-skill` and `incridible-skill-3d`, which this skill loads and reuses. Without them the selector, tokens, Atelier, `codegraph` and the contrast audit still work.
 
-## Como usar
+## Use it
 
-> *"Use a awwards-skill para criar um site nível Awwwards para [marca], com um vídeo guiado por scroll e a identidade do Apple design system."*
+> *"Use awwwards-skill to build an Awwwards-level site for [brand], with a scroll-driven video and the Apple design system."*
 
-> *"Crie um modelo 3D de [objeto] em .glb, sem Blender, com LODs e uma imagem de capa."*
+> *"Model a [object] as a .glb, no Blender, with LODs and a cover image."*
 
-> *"Mapeie este repositório com o graphify antes de redesenhar a página inicial."*
+> *"Map this repo with graphify before redesigning the home page."*
 
-## Estrutura
+## Layout
 
 ```text
-awwards-skill/
-├── SKILL.md                       # hub: fluxo, regras e escolha de rota
+awwwards-skill/
+├── SKILL.md                       # hub: workflow, rules, route choice
 ├── references/
-│   ├── 01-taste.md                # direções, frase-ideia, anti-slop, scorecard
-│   ├── 02-scrollcraft.md          # beats, dispositivos de scroll, orçamentos
-│   ├── 03-graft.md                # portar recursos do GitHub com gate de licença
-│   ├── 04-graphify.md             # mapa de código antes de editar
-│   ├── 05-design-systems.md       # contrato de tokens, seleção, empréstimo
-│   ├── 06-3d-atelier.md           # SDF, materiais, personagens, hull, LODs
-│   ├── 07-3d-generators.md        # rota Tripo-class e limpeza sem Blender
-│   ├── 08-qa-gate.md              # gate e relatório final
-│   ├── 09-blender-on-request.md   # Blender só sob pedido
+│   ├── 01-taste.md                # directions, idea sentence, anti-slop, scorecard
+│   ├── 02-scrollcraft.md          # beats, scroll devices, budgets
+│   ├── 03-graft.md                # port GitHub features behind a licence gate
+│   ├── 04-graphify.md             # code map before editing
+│   ├── 05-design-systems.md       # token contract, selection, borrowing
+│   ├── 06-3d-atelier.md           # SDF, materials, characters, hull, LODs
+│   ├── 07-3d-generators.md        # Tripo-class route and cleanup without Blender
+│   ├── 08-qa-gate.md              # gate and final report
+│   ├── 09-blender-on-request.md   # Blender only when asked
 │   └── ds/                        # apple · google · fluent2 · atlassian · salesforce
 ├── scripts/
-│   ├── pick-design-system.mjs     # seletor de design system
-│   ├── contrast-check.mjs         # auditoria WCAG dos tokens
-│   ├── codegraph.mjs              # graphify offline (graph.json, relatório, HTML)
+│   ├── pick-design-system.mjs     # design-system selector
+│   ├── contrast-check.mjs         # WCAG audit of the tokens
+│   ├── codegraph.mjs              # offline graphify (graph.json, report, HTML)
 │   └── atelier/                   # atelier.mjs · selftest.mjs · lib/ · models/
 └── assets/design-systems/         # tokens.css × 5
 ```
 
-## Verificação
+## Verify
 
 ```bash
-node scripts/atelier/selftest.mjs                              # pipeline 3D de ponta a ponta
+node scripts/atelier/selftest.mjs                              # end-to-end 3D pipeline
 node scripts/contrast-check.mjs assets/design-systems/*/tokens.css
 ```
 
-## Limites, ditos com clareza
+## Limits, stated plainly
 
-- O Atelier faz muito bem produtos, props e personagens estilizados. **Não substitui** um gerador aprendido como o Tripo em formas orgânicas arbitrárias (um tênis específico, rostos, animais, comida). Para isso a skill documenta a rota com gerador e a limpeza do `.glb`.
-- Silhueta para malha não recupera concavidades, e o Atelier não aceita malhas externas para remalhar.
-- Os valores dos tokens são aproximações auditadas dos sistemas públicos, **não** cópias oficiais. Confira na documentação de cada fabricante quando a fidelidade exata importar.
-- Os movimentos de WebGL e GSAP não foram testados em navegador no ambiente de criação, e a direção do normal map segue a convenção glTF, sem ter sido vista num viewer real.
-- Não foram rodadas avaliações nem benchmarks da skill.
+- Atelier is very good at products, props and stylised characters. It is **not** a replacement for a learned generator such as Tripo on arbitrary organic shapes (a specific sneaker, faces, animals, food). The skill documents the generator route and `.glb` cleanup for those.
+- Silhouette-to-mesh cannot recover concavities, and Atelier does not ingest external meshes for remeshing.
+- Token values are audited approximations of the public systems, **not** official copies. Check each vendor's documentation when exact fidelity matters.
+- WebGL and GSAP motion were not browser-tested in the authoring environment, and the normal-map direction follows the glTF convention without having been seen in a real viewer.
+- No evals or benchmarks have been run on the skill yet.
 
-## Avisos
+## Contributing
 
-Apple, Google, Microsoft, Atlassian e Salesforce são marcas dos respectivos donos. Esta skill só reproduz princípios públicos de design e não redistribui fontes ou logotipos proprietários. Um site "no estilo de" um design system não é material oficial do fabricante.
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Licença: ainda não definida.
+## Notices
+
+Apple, Google, Microsoft, Atlassian and Salesforce are trademarks of their respective owners. This skill only reproduces public design principles and does not redistribute proprietary fonts or logos. A site "in the style of" a design system is not official vendor material.
+
+License: [MIT](LICENSE).
