@@ -19,6 +19,10 @@
   A Claude skill that decides, records and checks every choice instead of just generating pretty pixels.
 </p>
 
+<p align="center">
+  <a href="https://rota-azul-demo.vercel.app"><b>▶ See a site made with it (live demo)</b></a> · scroll to descend from a plane window to the sea
+</p>
+
 ---
 
 ## What it is
@@ -33,6 +37,10 @@
 | **Graphify** | Map a site or repo before touching it (`scripts/codegraph.mjs`, works offline). |
 | **5 design systems** | Apple, Google, Fluent 2, Atlassian and Salesforce behind one token contract, plus a selector that picks the best fit for the site. |
 | **Atelier 3D** | Signed-distance modelling, PBR texture baking, LODs, silhouette-to-mesh and `.glb` export. Node only. |
+
+## Live demo
+
+**[rota-azul-demo.vercel.app](https://rota-azul-demo.vercel.app)** is a site built with this skill (the brand is fictional). Scrolling controls a video, the altitude readout counts down from 11,000 m to sea level, and the page falls back to three static scenes without JavaScript or with reduced motion. It uses the Apple tokens from this repo and no third-party libraries. Source: [`demo/`](demo/) (safe to delete if you only want the skill).
 
 ## How it works
 
@@ -139,6 +147,7 @@ awwwards-skill/
 │   ├── 08-qa-gate.md              # gate and final report
 │   ├── 09-blender-on-request.md   # Blender only when asked
 │   └── ds/                        # apple · google · fluent2 · atlassian · salesforce
+├── demo/                          # the live demo site (optional, not part of the skill)
 ├── scripts/
 │   ├── pick-design-system.mjs     # design-system selector
 │   ├── contrast-check.mjs         # WCAG audit of the tokens

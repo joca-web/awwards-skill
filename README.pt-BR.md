@@ -15,6 +15,10 @@
   Uma skill que decide, registra e confere cada escolha, em vez de só gerar pixels bonitos.
 </p>
 
+<p align="center">
+  <a href="https://rota-azul-demo.vercel.app"><b>▶ Veja um site feito com ela (demo ao vivo)</b></a> · role para descer da janela do avião até o mar
+</p>
+
 ---
 
 ## O que é
@@ -29,6 +33,10 @@
 | **Graphify** | Mapear o site ou repositório antes de mexer (`scripts/codegraph.mjs`, funciona offline). |
 | **5 design systems** | Apple, Google, Fluent 2, Atlassian e Salesforce num mesmo contrato de tokens, com um seletor que escolhe o melhor para cada configuração. |
 | **Atelier 3D** | Modelagem por campos de distância, texturas PBR, LODs, silhueta para malha e exportação `.glb`, só com Node. |
+
+## Demo ao vivo
+
+**[rota-azul-demo.vercel.app](https://rota-azul-demo.vercel.app)** é um site feito com esta skill (a marca é fictícia). O scroll controla um vídeo, a altitude cai de 11.000 m ao nível do mar, e a página vira três cenas estáticas sem JavaScript ou com movimento reduzido. Usa os tokens Apple deste repositório e nenhuma biblioteca de terceiros. Código: [`demo/`](demo/) (pode apagar se quiser só a skill).
 
 ## Como funciona
 
@@ -135,6 +143,7 @@ awwards-skill/
 │   ├── 08-qa-gate.md              # gate e relatório final
 │   ├── 09-blender-on-request.md   # Blender só sob pedido
 │   └── ds/                        # apple · google · fluent2 · atlassian · salesforce
+├── demo/                          # o site da demo ao vivo (opcional, não faz parte da skill)
 ├── scripts/
 │   ├── pick-design-system.mjs     # seletor de design system
 │   ├── contrast-check.mjs         # auditoria WCAG dos tokens
