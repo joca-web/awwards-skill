@@ -1,0 +1,109 @@
+/* Apple (Human Interface Guidelines, apple.com web): tokens for awwards-skill.
+   Semantic contract: every design system exposes the same --ds-* names, so a site switches system by swapping this file.
+   Official source (verify values against it before shipping): https://developer.apple.com/design/human-interface-guidelines/
+   Native names: Apple "systemBlue" #007AFF is for filled controls on iOS; on web text it fails 4.5:1, so links use --ds-accent-text.
+   Light is the default; dark applies with [data-theme="dark"] or, when no theme is set, prefers-color-scheme. */
+
+:root {
+  color-scheme: light dark;
+  --ds-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ds-font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --ds-fs-display: clamp(2.5rem, 6vw, 5rem);
+  --ds-fs-h1: clamp(2rem, 4.4vw, 3.5rem);
+  --ds-fs-h2: clamp(1.5rem, 3vw, 2.5rem);
+  --ds-fs-h3: 1.3125rem;
+  --ds-fs-body: 1.0625rem;
+  --ds-fs-small: 0.875rem;
+  --ds-lh-display: 1.05;
+  --ds-lh-h1: 1.08;
+  --ds-lh-h2: 1.12;
+  --ds-lh-h3: 1.19;
+  --ds-lh-body: 1.47;
+  --ds-lh-small: 1.43;
+  --ds-fw-display: 600;
+  --ds-fw-h1: 600;
+  --ds-fw-h2: 600;
+  --ds-fw-h3: 600;
+  --ds-fw-body: 400;
+  --ds-fw-small: 400;
+  --ds-ls-display: -0.015em;
+  --ds-ls-h1: -0.012em;
+  --ds-ls-h2: -0.01em;
+  --ds-ls-h3: -0.005em;
+  --ds-ls-body: -0.022em;
+  --ds-ls-small: -0.016em;
+  --ds-radius-s: 8px;
+  --ds-radius-m: 12px;
+  --ds-radius-l: 18px;
+  --ds-radius-pill: 980px;
+  --ds-space-1: 4px; --ds-space-2: 8px; --ds-space-3: 12px; --ds-space-4: 16px; --ds-space-5: 24px; --ds-space-6: 32px; --ds-space-7: 48px; --ds-space-8: 64px; --ds-space-9: 96px;
+  --ds-control-h: 44px;
+  --ds-gap: 24px;
+  --ds-ease-standard: cubic-bezier(0.28, 0.11, 0.32, 1);
+  --ds-ease-emphasized: cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-dur-fast: 240ms;
+  --ds-dur-base: 500ms;
+  --ds-dur-slow: 900ms;
+  --ds-shadow-s: 0 2px 12px rgba(0,0,0,0.06);
+  --ds-shadow-m: 0 4px 30px rgba(0,0,0,0.10);
+  --ds-shadow-l: 0 20px 60px rgba(0,0,0,0.16);
+  --ds-focus-ring: 0 0 0 2px var(--ds-bg), 0 0 0 4px var(--ds-focus);
+}
+
+/* light */
+:root {
+  --ds-bg: #FFFFFF;
+  --ds-surface: #F5F5F7;
+  --ds-surface-raised: #FFFFFF;
+  --ds-text: #1D1D1F;
+  --ds-text-subtle: #6E6E73;
+  --ds-accent: #0071E3;
+  --ds-on-accent: #FFFFFF;
+  --ds-accent-text: #0066CC;
+  --ds-border: #D2D2D7;
+  --ds-border-strong: #86868B;
+  --ds-danger: #D70015;
+  --ds-success: #1E7B34;
+  --ds-warning: #B25000;
+  --ds-focus: #0071E3;
+}
+
+[data-theme="dark"] {
+  --ds-bg: #000000;
+  --ds-surface: #1D1D1F;
+  --ds-surface-raised: #2C2C2E;
+  --ds-text: #F5F5F7;
+  --ds-text-subtle: #A1A1A6;
+  --ds-accent: #0071E3;
+  --ds-on-accent: #FFFFFF;
+  --ds-accent-text: #2997FF;
+  --ds-border: #424245;
+  --ds-border-strong: #86868B;
+  --ds-danger: #FF453A;
+  --ds-success: #30D158;
+  --ds-warning: #FF9F0A;
+  --ds-focus: #2997FF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ds-bg: #000000;
+    --ds-surface: #1D1D1F;
+    --ds-surface-raised: #2C2C2E;
+    --ds-text: #F5F5F7;
+    --ds-text-subtle: #A1A1A6;
+    --ds-accent: #0071E3;
+    --ds-on-accent: #FFFFFF;
+    --ds-accent-text: #2997FF;
+    --ds-border: #424245;
+    --ds-border-strong: #86868B;
+    --ds-danger: #FF453A;
+    --ds-success: #30D158;
+    --ds-warning: #FF9F0A;
+    --ds-focus: #2997FF;
+  }
+}
+
+/* Usage: body { font: var(--ds-fw-body) var(--ds-fs-body)/var(--ds-lh-body) var(--ds-font-sans); background: var(--ds-bg); color: var(--ds-text); }
+   a { color: var(--ds-accent-text); }  .btn { background: var(--ds-accent); color: var(--ds-on-accent); border-radius: var(--ds-radius-pill|m); }
+   :focus-visible { outline: none; box-shadow: var(--ds-focus-ring); } */

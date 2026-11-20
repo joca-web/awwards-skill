@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rota Azul · Do céu à baía</title>
+<meta name="description" content="Demonstração de um site guiado por scroll: a cada giro da roda, você perde altitude, atravessa as nuvens e pousa numa baía. Marca fictícia, criada com a awwards-skill.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rota Azul · Do céu à baía">
+<meta property="og:description" content="Um site em que o scroll é a descida: da janela do avião ao mar. Demo da awwards-skill.">
+<meta property="og:url" content="https://rota-azul-demo.vercel.app/">
+<meta property="og:image" content="https://rota-azul-demo.vercel.app/media/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232D5E9E'/%3E%3Cstop offset='.6' stop-color='%23F2A06B'/%3E%3Cstop offset='1' stop-color='%23F26D78'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("scrub")</script>
+<link rel="preload" as="image" href="media/poster.jpg" fetchpriority="high">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#manifesto">Pular para o conteúdo</a>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="Rota Azul, início"><i aria-hidden="true"></i>Rota Azul</a>
+  <a class="pill" href="https://github.com/joca-web/awwards-skill" target="_blank" rel="noopener">Ver como foi feito<span aria-hidden="true"> ↗</span></a>
+</header>
+
+<main>
+<!-- 1. A descida: o scroll é o tempo do vídeo -->
+<section class="trip" id="trip" aria-label="A descida: da janela do avião à baía">
+  <div class="stage">
+    <video class="film" muted playsinline preload="auto" tabindex="-1" aria-hidden="true" poster="media/poster.jpg"></video>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <article class="phase" data-a="-0.06" data-b="0.26" style="--still:url(media/still-window.jpg)">
+      <div class="copy">
+        <p class="eyebrow">Rota Azul · voos panorâmicos</p>
+        <h1>Do céu<br>à baía.</h1>
+        <p class="lede">Uma viagem que começa numa janela e termina com os pés na água.</p>
+      </div>
+    </article>
+
+    <article class="phase" data-a="0.33" data-b="0.60" style="--still:url(media/still-clouds.jpg)">
+      <div class="copy">
+        <p class="eyebrow">18:42 · luz dourada</p>
+        <h2>Acima das nuvens, o dia ainda não acabou.</h2>
+      </div>
+    </article>
+
+    <article class="phase" data-a="0.72" data-b="1.2" style="--still:url(media/still-bay.jpg)">
+      <div class="copy">
+        <p class="eyebrow">Nível do mar</p>
+        <h2>E então,<br>o mar.</h2>
+        <p class="lede">A descida termina onde a água é transparente.</p>
+      </div>
+    </article>
+
+    <div class="hud" aria-hidden="true">
+      <span class="hud-label">Altitude</span>
+      <output class="hud-value" id="alt">11.000 m</output>
+    </div>
+    <div class="rail" aria-hidden="true"><i id="rail"></i></div>
+    <p class="hint" id="hint" aria-hidden="true">Role para descer</p>
+  </div>
+</section>
+
+<!-- 2. Manifesto: as palavras acendem com o scroll -->
+<section class="manifesto" id="manifesto" aria-labelledby="mf">
+  <h2 id="mf" class="words" data-words>Não vendemos passagens. Vendemos o instante em que a janela vira paisagem.</h2>
+</section>
+
+<!-- 3. Como funciona: linhas editoriais, não cartões iguais -->
+<section class="steps" aria-labelledby="st">
+  <h2 id="st" class="small-title">Como funciona</h2>
+  <ol>
+    <li data-reveal><span class="n">01</span><div><h3>Escolha a baía</h3><p>Uma enseada por viagem, escolhida pela cor da água e não pelo roteiro.</p></div></li>
+    <li data-reveal><span class="n">02</span><div><h3>Escolha a hora da luz</h3><p>Amanhecer rosa, tarde dourada ou fim de dia. A rota é desenhada em volta dela.</p></div></li>
+    <li data-reveal><span class="n">03</span><div><h3>Pouse</h3><p>Do assento à areia sem filas no meio: o resto da viagem é ficar.</p></div></li>
+  </ol>
+</section>
+
+<!-- 4. A baía abre até ocupar a tela -->
+<section class="expand" id="expand" aria-label="A baía">
+  <div class="expand-stage">
+    <figure class="expand-frame" id="frame">
+      <img src="media/still-bay.jpg" alt="Baía tropical vista de cima: água turquesa, mata densa, barcos e uma faixa de areia" width="1600" height="1200" loading="lazy" decoding="async">
+      <figcaption>Imagem ilustrativa. Não é um lugar real à venda.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 5. Pouso -->
+<section class="landing" id="fim" aria-labelledby="fim-t">
+  <p class="eyebrow">Fim da descida</p>
+  <h2 id="fim-t">Pousou.</h2>
+  <p class="lede">A Rota Azul é uma marca fictícia. Este site é uma demonstração criada com a <strong>awwards-skill</strong>: direção de arte, scroll guiado por vídeo e o design system Apple, verificados em navegador.</p>
+  <div class="actions">
+    <a class="btn" href="https://github.com/joca-web/awwards-skill" target="_blank" rel="noopener">Ver a skill no GitHub</a>
+    <a class="btn ghost" href="#trip" id="up">Voltar ao céu</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>© Rota Azul (marca fictícia, demonstração)</span>
+  <span>Feito com <a href="https://github.com/joca-web/awwards-skill" target="_blank" rel="noopener">awwards-skill</a> · design system Apple (tokens) · sem bibliotecas de terceiros</span>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
