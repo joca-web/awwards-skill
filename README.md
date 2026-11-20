@@ -20,7 +20,8 @@
 </p>
 
 <p align="center">
-  <a href="https://rota-azul-demo.vercel.app"><b>▶ See a site made with it (live demo)</b></a> · scroll to descend from a plane window to the sea
+  <a href="https://rota-azul-demo.vercel.app"><img src="docs/img/demo.gif" alt="Click to open the live demo: scroll to descend from a plane window to the sea" width="720"></a><br>
+  <a href="https://rota-azul-demo.vercel.app"><b>▶ Click to open the live demo</b></a>
 </p>
 
 ---

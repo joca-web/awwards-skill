@@ -16,7 +16,8 @@
 </p>
 
 <p align="center">
-  <a href="https://rota-azul-demo.vercel.app"><b>▶ Veja um site feito com ela (demo ao vivo)</b></a> · role para descer da janela do avião até o mar
+  <a href="https://rota-azul-demo.vercel.app"><img src="docs/img/demo.gif" alt="Clique para abrir a demo ao vivo: role para descer da janela do avião até o mar" width="720"></a><br>
+  <a href="https://rota-azul-demo.vercel.app"><b>▶ Clique para abrir a demo ao vivo</b></a>
 </p>
 
 ---
