@@ -58,4 +58,4 @@ Neutral is the one mapped here. Astryx also ships Butter, Chocolate, Gothic (dar
 Contrast verified in both themes. Targets grow to 44 px on coarse pointers. Astryx's own design records (vendored under `vendor/astryx/docs/design/`) cover reduced motion, bidirectionality, system and user states, typography hierarchy and control rhythm; read the one that matches the component you are building. Several of those records are marked `draft` upstream: treat them as guidance, not as a published standard.
 
 ## Lends to other systems
-Spacing and grouping; reduced-motion rule; quiet elevation (in product UI). The selector prints these when another system is primary.
+Spacing and grouping; reduced-motion rule; quiet elevation (in product UI). The selector prints these when another system is primary. Astryx is also the skill's default: it is used on every build unless the person asks to change (`SKILL.md` rule 2).

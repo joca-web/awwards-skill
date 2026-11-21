@@ -33,7 +33,7 @@
 | **Movimento de interface** | Como botões, menus, popovers, toasts e arrastes devem se mover: quando não animar, curvas, tempos, e skills de revisão e auditoria de [Emil Kowalski](https://github.com/emilkowalski/skills) (incluídas). |
 | **Graft** | Portar um recurso de um repositório público do GitHub só depois de passar por um gate de licença, escopo, stack, qualidade e manutenção. |
 | **Graphify** | Mapear o site ou repositório antes de mexer (`scripts/codegraph.mjs`, funciona offline). |
-| **6 design systems** | Apple, Google, Fluent 2, Atlassian, Salesforce e o [Astryx](https://github.com/meta/astryx) da Meta num mesmo contrato de tokens, com um seletor que escolhe o melhor para cada configuração. |
+| **6 design systems** | Apple, Google, Fluent 2, Atlassian, Salesforce e o [Astryx](https://github.com/meta/astryx) da Meta num mesmo contrato de tokens. **O Astryx é o padrão**; peça "mude o design system" e um seletor escolhe o melhor entre os outros. |
 | **Atelier 3D** | Modelagem por campos de distância, texturas PBR, LODs, silhueta para malha e exportação `.glb`, só com Node. |
 
 ## Demo ao vivo
@@ -73,11 +73,11 @@ Todos expõem as mesmas variáveis CSS `--ds-*`. Trocar de sistema é trocar **u
 | Salesforce SLDS | CRM, ERP, telas de registro e formulários longos | [`ds/salesforce.md`](references/ds/salesforce.md) |
 | Astryx (Meta) | Ferramentas de desenvolvimento, SaaS, documentação, apps React; base cinza e calma para temas de marca | [`ds/astryx.md`](references/ds/astryx.md) |
 
-**O seletor** pontua o sistema primário e diz o que emprestar dos outros. Só mecanismos entram, nunca cores, fontes ou raios, para o site não parecer "montado":
+**O Astryx é usado primeiro em toda construção.** Se você não gostar, ou citar outro sistema, a skill troca. Quando você não cita nenhum, **o seletor** (`--exclude astryx`) pontua o sistema primário e diz o que emprestar dos outros. Só mecanismos entram, nunca cores, fontes ou raios, para o site não parecer "montado":
 
 ```console
 $ node scripts/pick-design-system.mjs --type marketing --audience consumer --density airy \
-    --tone premium-minimal --motion high --3d yes --ambition awwwards
+    --tone premium-minimal --motion high --3d yes --ambition awwwards --exclude astryx
 
 Primary: Apple HIG  (score 23, confidence high)
 Runner-up: Google Material 3 (12)

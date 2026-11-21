@@ -28,6 +28,8 @@ Why semantic names: components never know which system they are in. A button is 
 
 ## 2. Choosing the primary
 
+**Astryx is the default.** Every build starts on it, without running the selector. The selector below is for the moment the person asks to change the system and has not named one: run it with `--exclude astryx`, show the top two or three, apply the pick. A system the person names is used as named, with no selector. A project that already has its own design system or brand tokens keeps them.
+
 ```bash
 node $APEX/scripts/pick-design-system.mjs --type <t> --audience <a> --density <d> --tone <t> --platform <p> --ecosystem <e> --motion <m> --3d <yes|no> --ambition <awwwards|standard> [--json]
 ```
@@ -42,11 +44,12 @@ node $APEX/scripts/pick-design-system.mjs --type <t> --audience <a> --density <d
 | `--ecosystem` | salesforce, atlassian, none (the site lives inside that vendor's ecosystem) |
 | `--motion` | low, medium, high |
 | `--3d` / `--ambition` | yes/no; awwwards/standard |
+| `--exclude` | comma list of ids to leave out of the ranking (use `astryx` when the person asked to change from the default) |
 | `--stack` | react, other (react favours Fluent 2, Atlassian and above all Astryx, which ship real React component libraries) |
 
 The score is a base fit per site type plus modifiers; the output lists the ranking, a confidence (high when the margin is 4 or more, medium for 2 to 3, low below that), the borrowing plan and the rules. It is a judgement aid, not an oracle. When confidence is low, decide from the brand and record why in `.apex/decisions.md`.
 
-Typical outcomes: marketing, portfolio and media sites land on Apple; Android-first and education flows on Google; dashboards, admin and Windows-centred products on Fluent 2; team-collaboration and docs on Atlassian; developer tools, SaaS and docs for a developer audience, especially in a React app, on Astryx; CRM and record-heavy enterprise on Salesforce. The scores are this skill's own judgement, not a ranking published by any vendor.
+Typical outcomes when the selector runs without `--exclude` (a way to see where each system fits, not the default): marketing, portfolio and media sites land on Apple; Android-first and education flows on Google; dashboards, admin and Windows-centred products on Fluent 2; team-collaboration and docs on Atlassian; developer tools, SaaS and docs for a developer audience, especially in a React app, on Astryx; CRM and record-heavy enterprise on Salesforce. The scores are this skill's own judgement, not a ranking published by any vendor.
 
 ## 3. Borrowing without mixing
 

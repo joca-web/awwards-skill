@@ -52,7 +52,7 @@ The engine does not generate DOM. You write semantic HTML (real `h1`, `p`, links
 |---|---|---|
 | 0 Intake | Step 0 (brief) | Ask the eight questions in one pass (vibe, journey, energy curve, feeling and the one memorable moment, the thing no other site does, distance from premium-minimal, one unbroken world or distinct scenes, existing assets). If the user delegates creative direction, write a brief marked "self-authored under explicit creative delegation". Write the answers into `.apex/decisions.md` (upstream uses `BRIEF.md`; keep both if the project has one) |
 | 1 Taste | Steps 1 and 2 | `01-taste.md` stays the source of the idea sentence and the anti-slop gate. Add upstream's feeling curve (one line per act: emotion, then what causes it) and name the peak before choosing devices |
-| 2 Design system | n/a | The selector decides; `--sc-*` tokens map to `--ds-*` (§4) |
+| 2 Design system | n/a | Astryx unless the person asked for another; `--sc-*` tokens map to `--ds-*` (§4) |
 | 3 Scroll architecture | Step 2 | Pick one grammar from the eight and say why the other seven lost; invent one signature move; run the fingerprint gate (differ from every existing row on at least 4 of 6 dimensions, never edit the registry to fit); then assign devices per beat: four or more device families, never the same twice in a row, at most two `scrub` acts, one peak with the largest span |
 | 4 Assets | Step 3 | One style preamble reused verbatim; look at every asset before using it; encode for scrubbing (`encode.sh`: dense GOP); layer the hero into planes |
 | 5 Build | Step 4 | Start from `references/template.html`; real HTML first |

@@ -4,6 +4,8 @@
 //   node pick-design-system.mjs --type marketing --audience consumer --density airy --tone premium-minimal --motion high --3d yes
 //   node pick-design-system.mjs --type crm --audience enterprise --density compact --ecosystem salesforce
 //   node pick-design-system.mjs --type dashboard --platform windows --json
+// Astryx is the default for every build (SKILL.md rule 2). Run this selector only when the user asks to change the system:
+//   node pick-design-system.mjs --type marketing --exclude astryx   (--exclude takes a comma list of ids)
 //
 // --type      marketing | portfolio | ecommerce | saas-app | dashboard | admin | docs | crm | devtools | collab | media | fintech | healthcare | education | mobile-web
 // --audience  consumer | prosumer | enterprise | developer
@@ -60,12 +62,15 @@ const WHY_BORROW = {
 
 const args = process.argv.slice(2); const get = (n, d) => { const i = args.indexOf('--' + n); return i >= 0 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : d; };
 const asJson = args.includes('--json');
+const exclude = get('exclude', '').split(',').map((s) => s.trim()).filter(Boolean);
+const badId = exclude.find((e) => !IDS.includes(e));
+if (badId) { console.error(`unknown --exclude "${badId}". Use ids from: ${IDS.join(', ')}`); process.exit(2); }
 const cfg = { type: get('type', 'marketing'), audience: get('audience', 'consumer'), density: get('density', 'comfortable'), tone: get('tone', ''), platform: get('platform', 'mixed'), ecosystem: get('ecosystem', 'none'), motion: get('motion', 'medium'), '3d': get('3d', 'no'), ambition: get('ambition', 'standard'), stack: get('stack', 'other') };
 if (!TYPE[cfg.type]) { console.error(`unknown --type "${cfg.type}". Use one of: ${Object.keys(TYPE).join(', ')}`); process.exit(2); }
 
 const score = [...TYPE[cfg.type]]; const notes = IDS.map(() => []);
 for (const [k, table] of Object.entries(MOD)) { const row = table[cfg[k]]; if (!row) continue; row.forEach((v, i) => { score[i] += v; if (v >= 2) notes[i].push(`${k}=${cfg[k]} (+${v})`); }); }
-const ranked = IDS.map((id, i) => ({ id, name: NAME[id], score: score[i], why: notes[i] })).sort((a, b) => b.score - a.score);
+const ranked = IDS.map((id, i) => ({ id, name: NAME[id], score: score[i], why: notes[i] })).filter((r) => !exclude.includes(r.id)).sort((a, b) => b.score - a.score);
 const primary = ranked[0], second = ranked[1], margin = primary.score - second.score;
 const group = GROUP[cfg.type], lends = {};
 for (const c of CONCERNS) { const best = BEST[group][c]; if (best !== primary.id && WHY_BORROW[best]?.[c]) lends[c] = { from: NAME[best], take: WHY_BORROW[best][c] }; }
@@ -80,6 +85,7 @@ const result = {
 };
 if (asJson) console.log(JSON.stringify(result, null, 2));
 else {
+  if (exclude.length) console.log(`\n(excluded: ${exclude.join(', ')}: the user asked for a different system)`);
   console.log(`\nPrimary: ${result.primary.name}  (score ${primary.score}, confidence ${result.confidence})`);
   console.log(`  why: ${result.primary.whyFits}${result.primary.signals.length ? '; ' + result.primary.signals.join(', ') : ''}`);
   console.log(`  tokens: ${path.relative(process.cwd(), result.primary.tokens)}   notes: ${result.primary.reference}`);
