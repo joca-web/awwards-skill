@@ -25,6 +25,8 @@ Run the inspector from `incridible-skill-3d` (`$I3D/scripts/shoot.mjs`) at 1440,
 | Performance | LCP under 2.5 s on throttled mobile profile; no layout shift from fonts; JS budget as in `02` |
 | Interaction | Every control reachable by keyboard; visible focus; no scroll trap; links work with the smooth-scroll layer |
 | Fallbacks | Poster for every canvas and sequence; `aria-label` or `aria-hidden` on decorative canvases |
+| Control motion | Review the interactive components against `10-ui-motion-craft.md` (the `review-animations` standards): no `ease-in` on UI, no `transition: all`, no `scale(0)` entrance, press feedback present, hover gated to `(hover: hover) and (pointer: fine)`, reduced motion honoured; run worst-case content (`break-ui`: long names, empty lists, huge counts) |
+| Scroll experience | If the page uses the scroll-craft method: one grammar named, a signature move, the fingerprint gate cleared against every existing row, the feeling curve and its peak written down, and the feel check done on the real page (`11-scroll-craft-engine.md`) |
 
 ## 2. Design-system gate
 
@@ -32,7 +34,7 @@ Run the inspector from `incridible-skill-3d` (`$I3D/scripts/shoot.mjs`) at 1440,
 node $APEX/scripts/contrast-check.mjs <project>/tokens.css      # all pairs pass, light and dark
 node $APEX/scripts/codegraph.mjs <project>                      # no undefined --ds-* tokens, no broken references
 ```
-Also check by eye: only one system's colours, fonts and radii are in use; borrowed mechanisms are written in the primary's tokens; custom brand colours were re-audited with `contrast-check.mjs --pair`.
+Also check by eye: only one system's colours, fonts and radii are in use (with Astryx: `fonts.css` loaded, Figtree licence shipped, brand accent overrides done as a set and re-audited); borrowed mechanisms are written in the primary's tokens; custom brand colours were re-audited with `contrast-check.mjs --pair`.
 
 ## 3. 3D gate
 
@@ -63,7 +65,8 @@ Score 1 to 10 with a one-line reason; below 8 gets a fix round.
 
 Short, in the user's language. Include:
 - Direction and idea sentence; design system, runner-up and what was borrowed.
-- Scroll beats in one line each.
+- Scroll beats in one line each; for a scroll-craft page also the grammar, signature move and peak.
+- Which control-motion rules the page deliberately breaks, and why.
 - For each 3D model: route (Atelier, hull, generator), triangles, size, known issues.
 - Inspector numbers: console clean, LCP, moving elements.
 - Placeholders and credits.

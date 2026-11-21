@@ -2,6 +2,8 @@
 
 Scroll is the timeline of the page. A good scroll experience has a story shape, one signature device, supporting devices that differ section by section, a budget, and a fallback. The approach follows the idea behind scroll-storytelling skills (plan beats first, then pick devices); the devices below map to components that already exist in `incridible-skill-3d`.
 
+> **Going further.** For a scroll experience in its own right (scrubbed video, pinned acts, a layered hero, a page that must not look like a template) also read `11-scroll-craft-engine.md`: the upstream scroll-craft method (eight page grammars, signature move, fingerprint gate, feeling curve) and its dependency-free engine. Use this file for beats, devices, budgets and fallbacks; use that one to decide the page's shape and to drive it without GSAP. Controls and micro-interactions follow `10-ui-motion-craft.md`.
+
 ## Contents
 1. Beats before layout
 2. Page structures

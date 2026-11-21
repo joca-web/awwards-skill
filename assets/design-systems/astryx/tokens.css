@@ -1,0 +1,143 @@
+/* Astryx (Meta, open source, MIT), Neutral theme: tokens for awwwards-skill.
+   Semantic contract: every design system exposes the same --ds-* names, so a site switches system by swapping this file.
+   Official source (verify values against it before shipping): https://astryx.atmeta.com  ·  https://github.com/meta/astryx
+   Values come from the Neutral theme (packages/themes/neutral) at the commit recorded in vendor/README.md, mapped onto --ds-*:
+     --ds-bg = --color-background-body   --ds-surface = --color-background-surface   --ds-text = --color-text-primary
+     --ds-text-subtle = --color-text-secondary   --ds-accent = --color-accent   --ds-border = --color-border
+     --ds-danger/success/warning = --color-text-error/-success/-warning   --ds-radius-s/m/l = --radius-inner/element/container
+   Three values are NOT Astryx values and are marked "derived": --ds-surface-raised (dark), --ds-border-strong (both modes)
+   and the tracking (Astryx sets none). Astryx's own --color-border-emphasized (#D4D4D4 / #474747) is a decorative edge that
+   fails 3:1, so form-control edges use the derived --ds-border-strong.
+   Font: Figtree (SIL OFL 1.1), shipped in ./fonts with its licence; load ./fonts.css before this file. Unlike the other
+   four systems, Astryx's typeface is open, so it is bundled.
+   Light is the default; dark applies with [data-theme="dark"] or, when no theme is set, prefers-color-scheme. */
+
+:root {
+  color-scheme: light dark;
+  --ds-font-sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ds-font-mono: ui-monospace, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Astryx type ladder: 14px base x 1.2 per step (17, 20, 24, 29, 35, 42). Brand pages stretch it two more steps (51, 60)
+     for the hero. Body uses 16px, Astryx's own floor on touch and narrow screens. */
+  --ds-fs-display: clamp(2.625rem, 6.2vw, 3.75rem);
+  --ds-fs-h1: clamp(2rem, 4vw, 2.625rem);
+  --ds-fs-h2: clamp(1.5rem, 2.6vw, 1.8125rem);
+  --ds-fs-h3: 1.25rem;
+  --ds-fs-body: 1rem;
+  --ds-fs-small: 0.875rem;
+  --ds-lh-display: 1.2381;
+  --ds-lh-h1: 1.2381;
+  --ds-lh-h2: 1.2414;
+  --ds-lh-h3: 1.4;
+  --ds-lh-body: 1.5;
+  --ds-lh-small: 1.4286;
+  --ds-fw-display: 400;   /* Astryx: display sizes are normal weight so large type does not shout */
+  --ds-fw-h1: 600;
+  --ds-fw-h2: 600;
+  --ds-fw-h3: 700;        /* Neutral sets bold on heading levels 3 and 4 */
+  --ds-fw-body: 400;
+  --ds-fw-small: 400;
+  --ds-ls-display: -0.02em;  /* derived: Astryx sets no tracking; large Figtree reads better tight */
+  --ds-ls-h1: -0.015em;
+  --ds-ls-h2: -0.01em;
+  --ds-ls-h3: 0;
+  --ds-ls-body: 0;
+  --ds-ls-small: 0;
+  --ds-radius-s: 6px;      /* --radius-inner */
+  --ds-radius-m: 10px;     /* --radius-element */
+  --ds-radius-l: 12px;     /* --radius-container */
+  --ds-radius-xl: 28px;    /* --radius-page (Astryx-specific extra: page-level frames, large media) */
+  --ds-radius-pill: 9999px;
+  --ds-space-1: 4px; --ds-space-2: 8px; --ds-space-3: 12px; --ds-space-4: 16px; --ds-space-5: 24px; --ds-space-6: 32px; --ds-space-7: 48px; --ds-space-8: 64px; --ds-space-9: 96px;
+  --ds-control-h: 32px;    /* --size-element-md; becomes 44px on coarse pointers, below */
+  --ds-gap: 16px;
+  --ds-ease-standard: cubic-bezier(0.24, 1, 0.4, 1);   /* --ease-standard: decelerates, for arrivals and state changes */
+  --ds-ease-emphasized: cubic-bezier(0.3, 0, 0.6, 0.6); /* --ease-exit: accelerates, for things leaving */
+  --ds-dur-fast: 125ms;    /* Neutral motion: fast 125, medium 300, slow 700 */
+  --ds-dur-base: 300ms;
+  --ds-dur-slow: 700ms;
+  /* Astryx keyboard focus: 2px ring in the accent colour at a 3px offset */
+  --ds-focus-ring: 0 0 0 3px var(--ds-bg), 0 0 0 5px var(--ds-focus);
+}
+
+@media (pointer: coarse) {
+  :root { --ds-control-h: 44px; }
+}
+
+/* light */
+:root {
+  --ds-bg: #F1F1F1;
+  --ds-surface: #FFFFFF;
+  --ds-surface-raised: #FFFFFF;
+  --ds-text: #000000;
+  --ds-text-subtle: #474747;
+  --ds-accent: #1B1B1B;
+  --ds-on-accent: #FFFFFF;
+  --ds-accent-text: #1B1B1B;
+  --ds-border: rgba(0, 0, 0, 0.08);
+  --ds-border-strong: #848484;   /* derived, 3:1 on bg and surface */
+  --ds-danger: #C0262C;
+  --ds-success: #2F7D33;
+  --ds-warning: #836700;
+  --ds-focus: #1B1B1B;
+  --ds-shadow-s: 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.10);
+  --ds-shadow-m: 0 2px 4px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.10);
+  --ds-shadow-l: 0 4px 6px rgba(0,0,0,0.10), 0 12px 24px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] {
+  --ds-bg: #1B1B1B;
+  --ds-surface: #262626;
+  --ds-surface-raised: #303030;   /* derived: one ramp step above surface; Astryx dark popovers use an inset ring instead */
+  --ds-text: #FFFFFF;
+  --ds-text-subtle: #9E9E9E;
+  --ds-accent: #F1F1F1;
+  --ds-on-accent: #111111;
+  --ds-accent-text: #F1F1F1;
+  --ds-border: rgba(255, 255, 255, 0.10);
+  --ds-border-strong: #777777;   /* derived, 3:1 on bg and surface */
+  --ds-danger: #FFAEA7;
+  --ds-success: #90CA90;
+  --ds-warning: #EEC448;
+  --ds-focus: #F1F1F1;
+  --ds-shadow-s: 0 2px 4px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.40), inset 0 0 0 1px rgba(255,255,255,0.08);
+  --ds-shadow-m: 0 2px 4px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.50), inset 0 0 0 1px rgba(255,255,255,0.12);
+  --ds-shadow-l: 0 4px 6px rgba(0,0,0,0.50), 0 12px 24px rgba(0,0,0,0.70), inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ds-bg: #1B1B1B;
+    --ds-surface: #262626;
+    --ds-surface-raised: #303030;
+    --ds-text: #FFFFFF;
+    --ds-text-subtle: #9E9E9E;
+    --ds-accent: #F1F1F1;
+    --ds-on-accent: #111111;
+    --ds-accent-text: #F1F1F1;
+    --ds-border: rgba(255, 255, 255, 0.10);
+    --ds-border-strong: #777777;
+    --ds-danger: #FFAEA7;
+    --ds-success: #90CA90;
+    --ds-warning: #EEC448;
+    --ds-focus: #F1F1F1;
+    --ds-shadow-s: 0 2px 4px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.40), inset 0 0 0 1px rgba(255,255,255,0.08);
+    --ds-shadow-m: 0 2px 4px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.50), inset 0 0 0 1px rgba(255,255,255,0.12);
+    --ds-shadow-l: 0 4px 6px rgba(0,0,0,0.50), 0 12px 24px rgba(0,0,0,0.70), inset 0 0 0 1px rgba(255,255,255,0.15);
+  }
+}
+
+/* Reduced motion (Astryx design:reduced-motion): no travel, scale or spring; a change cross-fades in 200ms or less on touch,
+   and is immediate with a mouse or keyboard. Sites using this file should honour the same rule. */
+@media (prefers-reduced-motion: reduce) {
+  :root { --ds-dur-fast: 0ms; --ds-dur-base: 0ms; --ds-dur-slow: 0ms; }
+}
+@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
+  :root { --ds-dur-fast: 120ms; --ds-dur-base: 200ms; --ds-dur-slow: 200ms; }
+}
+
+/* Usage: load fonts.css first, then this file.
+   body { font: var(--ds-fw-body) var(--ds-fs-body)/var(--ds-lh-body) var(--ds-font-sans); background: var(--ds-bg); color: var(--ds-text); }
+   a { color: var(--ds-accent-text); }  .btn { background: var(--ds-accent); color: var(--ds-on-accent); border-radius: var(--ds-radius-m); min-height: var(--ds-control-h); }
+   :focus-visible { outline: none; box-shadow: var(--ds-focus-ring); }
+   A brand accent replaces --ds-accent / --ds-accent-text / --ds-on-accent / --ds-focus together (Astryx themes are token overrides);
+   re-run scripts/contrast-check.mjs afterwards. */

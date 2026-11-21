@@ -9,7 +9,7 @@
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue?style=flat-square"></a>
   <img alt="Claude skill" src="https://img.shields.io/badge/skill-Claude-D97757?style=flat-square">
-  <img alt="Design systems" src="https://img.shields.io/badge/design%20systems-5-1868DB?style=flat-square">
+  <img alt="Design systems" src="https://img.shields.io/badge/design%20systems-6-1868DB?style=flat-square">
   <img alt="WCAG AA tokens" src="https://img.shields.io/badge/tokens-WCAG%20AA-2E7D32?style=flat-square">
   <img alt="Blender only on request" src="https://img.shields.io/badge/Blender-only%20if%20you%20ask-F5792A?style=flat-square">
 </p>
@@ -33,10 +33,11 @@
 | Layer | What it does |
 |---|---|
 | **Taste** | Client inventory, three art directions, one idea sentence, one signature moment, and an anti-"template look" gate. |
-| **Scroll craft** | Scroll beats, page structures, pins, frame sequences, 3D camera moves, budgets and fallbacks. |
+| **Scroll craft** | Scroll beats, page structures, pins, frame sequences, 3D camera moves, budgets and fallbacks, plus the full [scroll-craft](https://github.com/nateherkai/scroll-craft) method and its dependency-free engine (bundled). |
+| **UI motion craft** | How controls, menus, popovers, toasts and drags should move: when not to animate, easing, timing, review and audit skills from [Emil Kowalski](https://github.com/emilkowalski/skills) (bundled). |
 | **Graft** | Port a feature from a public GitHub repo only after a licence, scope, stack, quality and maintenance gate. |
 | **Graphify** | Map a site or repo before touching it (`scripts/codegraph.mjs`, works offline). |
-| **5 design systems** | Apple, Google, Fluent 2, Atlassian and Salesforce behind one token contract, plus a selector that picks the best fit for the site. |
+| **6 design systems** | Apple, Google, Fluent 2, Atlassian, Salesforce and Meta's [Astryx](https://github.com/meta/astryx) behind one token contract, plus a selector that picks the best fit for the site. |
 | **Atelier 3D** | Signed-distance modelling, PBR texture baking, LODs, silhouette-to-mesh and `.glb` export. Node only. |
 
 ## Live demo
@@ -59,12 +60,12 @@ flowchart LR
 
 Every decision is written to `.apex/decisions.md`: the idea sentence, the chosen design system, the scroll beats and the route for each 3D model. The gate runs a real-browser inspector at 1440, 768 and 390 px with real scrolling, a contrast audit and the 3D self-test before anything is called done.
 
-## Five design systems, one contract
+## Six design systems, one contract
 
-All five expose the same `--ds-*` CSS variables. Switching system means swapping **one file** (`tokens.css`). Light by default; dark through `[data-theme="dark"]` or `prefers-color-scheme`.
+All six expose the same `--ds-*` CSS variables. Switching system means swapping **one file** (`tokens.css`). Light by default; dark through `[data-theme="dark"]` or `prefers-color-scheme`.
 
 <p align="center">
-  <img src="docs/img/design-systems.svg" alt="Light and dark palettes of the five design systems" width="100%">
+  <img src="docs/img/design-systems.svg" alt="Light and dark palettes of the six design systems" width="100%">
 </p>
 
 | System | Best for | Notes |
@@ -74,6 +75,7 @@ All five expose the same `--ds-*` CSS variables. Switching system means swapping
 | Microsoft Fluent 2 | Dashboards, admin, fintech, healthcare | [`ds/fluent2.md`](references/ds/fluent2.md) |
 | Atlassian | Collaboration, docs, devtools | [`ds/atlassian.md`](references/ds/atlassian.md) |
 | Salesforce SLDS | CRM, ERP, record pages, long forms | [`ds/salesforce.md`](references/ds/salesforce.md) |
+| Astryx (Meta) | Developer tools, SaaS, docs, React apps; a quiet grayscale canvas for brand-level theming | [`ds/astryx.md`](references/ds/astryx.md) |
 
 **The selector** scores a primary system and says what to borrow from the others. Only mechanisms are borrowed, never colours, fonts or radii, so the site never looks assembled:
 
@@ -88,9 +90,10 @@ Borrow (mechanisms only):
   - colour roles and dark mode: from Google Material 3: tonal palette roles (primary, container, on-*)
   - component states: from Google Material 3: state layers: hover 8%, focus 10%, pressed 10%
   - focus and accessibility: from Microsoft Fluent 2: two-ring focus outline, forced-colors support
+  - reduced motion: from Astryx (Meta): no travel, scale or spring; a cross-fade of 200 ms or less on touch
 ```
 
-Every token file passes `scripts/contrast-check.mjs` (text 4.5:1, UI 3:1, light and dark).
+Every token file passes `scripts/contrast-check.mjs` (text 4.5:1, UI 3:1, light and dark). Astryx is the one system whose values come straight from published source (its Neutral theme, MIT), and the only one whose typeface (Figtree, SIL OFL) is open, so the font ships too. Add `--stack react` to the selector for a React app.
 
 ## Atelier: professional 3D in code, no Blender
 
@@ -147,14 +150,21 @@ awwwards-skill/
 │   ├── 07-3d-generators.md        # Tripo-class route and cleanup without Blender
 │   ├── 08-qa-gate.md              # gate and final report
 │   ├── 09-blender-on-request.md   # Blender only when asked
-│   └── ds/                        # apple · google · fluent2 · atlassian · salesforce
+│   ├── 10-ui-motion-craft.md      # how controls move (Emil Kowalski), routes to vendor/
+│   ├── 11-scroll-craft-engine.md  # scroll-craft method and engine, fingerprint gate
+│   └── ds/                        # apple · google · fluent2 · atlassian · salesforce · astryx
+├── vendor/                        # third-party skills kept unchanged with their licences
+│   ├── emilkowalski-skills/       # 19 skills + cheatsheets (MIT)
+│   ├── scroll-craft/              # method, engine, harness (MIT)
+│   └── astryx/                    # design records and the Neutral theme (MIT)
+├── THIRD_PARTY_NOTICES.md
 ├── demo/                          # the live demo site (optional, not part of the skill)
 ├── scripts/
 │   ├── pick-design-system.mjs     # design-system selector
 │   ├── contrast-check.mjs         # WCAG audit of the tokens
 │   ├── codegraph.mjs              # offline graphify (graph.json, report, HTML)
 │   └── atelier/                   # atelier.mjs · selftest.mjs · lib/ · models/
-└── assets/design-systems/         # tokens.css × 5
+└── assets/design-systems/         # tokens.css × 6 (Astryx also ships Figtree fonts)
 ```
 
 ## Verify
@@ -170,6 +180,8 @@ node scripts/contrast-check.mjs assets/design-systems/*/tokens.css
 - Silhouette-to-mesh cannot recover concavities, and Atelier does not ingest external meshes for remeshing.
 - Token values are audited approximations of the public systems, **not** official copies. Check each vendor's documentation when exact fidelity matters.
 - WebGL and GSAP motion were not browser-tested in the authoring environment, and the normal-map direction follows the glTF convention without having been seen in a real viewer.
+- The bundled scroll-craft engine and scripts were checked for syntax and for network and licence behaviour, but **not run** here. Its image and video generator (`kie.mjs`) calls the paid kie.ai API and is only to be used with your own key and your approval.
+- Astryx is in Beta upstream, and several of its design records are marked draft. Three values in its `tokens.css` are derived and labelled as such.
 - No evals or benchmarks have been run on the skill yet.
 
 ## Contributing
@@ -178,6 +190,8 @@ Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Notices
 
-Apple, Google, Microsoft, Atlassian and Salesforce are trademarks of their respective owners. This skill only reproduces public design principles and does not redistribute proprietary fonts or logos. A site "in the style of" a design system is not official vendor material.
+Apple, Google, Microsoft, Atlassian, Salesforce and Meta are trademarks of their respective owners. This skill only reproduces public design principles and does not redistribute proprietary fonts or logos. A site "in the style of" a design system is not official vendor material.
+
+**Bundled work by others.** `vendor/` carries unmodified material from [Emil Kowalski's skills](https://github.com/emilkowalski/skills) (MIT), [scroll-craft](https://github.com/nateherkai/scroll-craft) by Nate Herk (MIT) and [Astryx](https://github.com/meta/astryx) by Meta (MIT), and `assets/design-systems/astryx/fonts/` carries the Figtree typeface (SIL OFL 1.1). Each keeps its licence; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [vendor/README.md](vendor/README.md).
 
 License: [MIT](LICENSE).
