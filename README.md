@@ -33,6 +33,7 @@
 | Layer | What it does |
 |---|---|
 | **Taste** | Client inventory, three art directions, one idea sentence, one signature moment, and an anti-"template look" gate. |
+| **The default kit** | Every site starts from a working starter on Astryx: a preloader before the hero, GSAP + Lenis smooth scroll, a page transition (curtain or native View Transitions), professional buttons and a Three.js hero with fallbacks. `node scripts/new-site.mjs <dir>` scaffolds it. |
 | **Scroll craft** | Scroll beats, page structures, pins, frame sequences, 3D camera moves, budgets and fallbacks, plus the full [scroll-craft](https://github.com/nateherkai/scroll-craft) method and its dependency-free engine (bundled). |
 | **UI motion craft** | How controls, menus, popovers, toasts and drags should move: when not to animate, easing, timing, review and audit skills from [Emil Kowalski](https://github.com/emilkowalski/skills) (bundled). |
 | **Graft** | Port a feature from a public GitHub repo only after a licence, scope, stack, quality and maintenance gate. |
@@ -160,10 +161,12 @@ awwwards-skill/
 ├── THIRD_PARTY_NOTICES.md
 ├── demo/                          # the live demo site (optional, not part of the skill)
 ├── scripts/
+│   ├── new-site.mjs               # scaffold a site from assets/starter
 │   ├── pick-design-system.mjs     # design-system selector
 │   ├── contrast-check.mjs         # WCAG audit of the tokens
 │   ├── codegraph.mjs              # offline graphify (graph.json, report, HTML)
 │   └── atelier/                   # atelier.mjs · selftest.mjs · lib/ · models/
+├── assets/starter/                # preloader · Lenis + GSAP · transitions · buttons · Three.js hero
 └── assets/design-systems/         # tokens.css × 6 (Astryx also ships Figtree fonts)
 ```
 

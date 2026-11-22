@@ -1,0 +1,18 @@
+/* Native cross-document View Transitions (optional). Link this file after site.css and set data-transition="view"
+   on <html>. Chrome and Edge 126+, Safari 18.2+. Elsewhere the rule is ignored and the JS curtain runs instead.
+   The old page wipes upward while the new page rises into place. Keep the whole thing under 900 ms. */
+@view-transition { navigation: auto; }
+
+::view-transition-group(root) { animation-duration: 800ms; animation-timing-function: var(--ds-ease-standard); }
+::view-transition-old(root) { animation: vt-out 800ms var(--ds-ease-standard) both; }
+::view-transition-new(root) { animation: vt-in 800ms var(--ds-ease-standard) both; }
+@keyframes vt-out { to { opacity: 0.4; transform: translateY(-6vh) scale(0.985); } }
+@keyframes vt-in { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* The nav stays put across pages instead of animating with the root snapshot */
+.nav { view-transition-name: nav; }
+::view-transition-group(nav) { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

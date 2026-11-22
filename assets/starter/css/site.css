@@ -1,0 +1,147 @@
+/* site.css: starter styles. Everything is built from the Astryx --ds-* tokens (ds/tokens.css), so swapping the
+   design system means swapping one file. Art direction owns the hero scale; the system owns everything else. */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--ds-bg); color: var(--ds-text);
+  font: var(--ds-fw-body) var(--ds-fs-body)/var(--ds-lh-body) var(--ds-font-sans);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+img, canvas, svg { display: block; max-width: 100%; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+:focus-visible { outline: none; box-shadow: var(--ds-focus-ring); border-radius: var(--ds-radius-s); }
+@media (forced-colors: active) { :focus-visible { outline: 2px solid Highlight; } }
+.skip { position: fixed; left: var(--ds-space-4); top: -100px; z-index: 100; padding: var(--ds-space-3) var(--ds-space-4); background: var(--ds-accent); color: var(--ds-on-accent); border-radius: var(--ds-radius-m); }
+.skip:focus { top: var(--ds-space-4); }
+
+/* Lenis essentials (from lenis.css, MIT) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* While a cover is up, the page behind cannot scroll. */
+html.is-loading, html.pt-enter { overflow: hidden; }
+
+/* ---------- Covers: preloader and page curtain ---------- */
+.preloader { position: fixed; inset: 0; z-index: 90; display: none; color: var(--ds-on-accent); }
+.is-loading .preloader { display: block; }
+.preloader__panel { position: absolute; inset: 0; background: var(--ds-accent); clip-path: inset(0 0 0 0); }
+.preloader__content {
+  position: absolute; inset: 0; display: grid; grid-template: "brand count" 1fr "bar bar" auto / 1fr auto;
+  padding: clamp(20px, 4vw, 48px); align-items: end;
+}
+.preloader__brand { grid-area: brand; font-size: var(--ds-fs-h2); font-weight: var(--ds-fw-h2); letter-spacing: var(--ds-ls-h2); align-self: start; }
+.preloader__count { grid-area: count; font-size: clamp(4rem, 14vw, 11rem); font-weight: 400; letter-spacing: -0.04em; line-height: 0.8; overflow: hidden; font-variant-numeric: tabular-nums; }
+.preloader__count > span { display: block; }
+.preloader__bar { grid-area: bar; display: block; height: 2px; margin-top: var(--ds-space-5); background: color-mix(in srgb, var(--ds-on-accent) 22%, transparent); overflow: hidden; }
+.preloader__bar > i { display: block; height: 100%; background: var(--ds-on-accent); transform: scaleX(0); transform-origin: 0 50%; }
+
+.curtain { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; background: var(--ds-accent); color: var(--ds-on-accent); transform: scaleY(0); transform-origin: 50% 100%; pointer-events: none; }
+.curtain__label { font-size: clamp(2rem, 7vw, 5rem); font-weight: 400; letter-spacing: -0.03em; overflow: hidden; }
+.pt-enter .curtain { transform: scaleY(1); transform-origin: 50% 0; pointer-events: auto; }
+
+/* ---------- Navigation ---------- */
+.nav { position: fixed; z-index: 50; inset: 0 0 auto 0; display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-5); padding: var(--ds-space-4) clamp(20px, 4vw, 48px); mix-blend-mode: normal; }
+.nav__brand { font-weight: 700; font-size: var(--ds-fs-h3); text-decoration: none; letter-spacing: -0.01em; }
+.nav__links { display: flex; gap: var(--ds-space-5); margin-left: auto; }
+.nav__links a { text-decoration: none; font-size: var(--ds-fs-small); color: var(--ds-text-subtle); min-height: var(--ds-control-h); display: inline-flex; align-items: center; transition: color var(--ds-dur-fast) var(--ds-ease-standard); }
+.nav__links a[aria-current="page"] { color: var(--ds-text); }
+@media (hover: hover) and (pointer: fine) { .nav__links a:hover { color: var(--ds-text); } }
+@media (max-width: 560px) { .nav__links { display: none; } .nav { justify-content: space-between; } }
+
+/* ---------- Buttons ---------- */
+.btn {
+  --px: 50%; --py: 50%; --mx: 0px; --my: 0px;
+  translate: var(--mx) var(--my);
+  position: relative; isolation: isolate; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-2);
+  min-height: calc(var(--ds-control-h) + 8px); padding: 0 var(--ds-space-5);
+  border: 1px solid transparent; border-radius: var(--ds-radius-pill);
+  font: 600 var(--ds-fs-small)/1 var(--ds-font-sans); letter-spacing: 0.005em; text-decoration: none; white-space: nowrap;
+  cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
+  transition: scale var(--ds-dur-fast) var(--ds-ease-standard), color var(--ds-dur-base) var(--ds-ease-standard), border-color var(--ds-dur-base) var(--ds-ease-standard), background-color var(--ds-dur-base) var(--ds-ease-standard);
+}
+.btn--lg { min-height: calc(var(--ds-control-h) + 20px); padding: 0 var(--ds-space-6); font-size: var(--ds-fs-body); }
+.btn--primary { background: var(--ds-accent); color: var(--ds-on-accent); }
+.btn--secondary { background: transparent; color: var(--ds-text); border-color: var(--ds-border-strong); }
+.btn--ghost { background: transparent; color: var(--ds-text); }
+/* Fill that grows from the pointer's entry point (--px/--py are set by buttons.js) */
+.btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--fill, transparent); clip-path: circle(0 at var(--px) var(--py)); transition: clip-path 520ms var(--ds-ease-standard); }
+.btn--secondary { --fill: var(--ds-accent); }
+.btn--ghost { --fill: color-mix(in srgb, var(--ds-text) 8%, transparent); }
+.btn--primary { --fill: color-mix(in srgb, var(--ds-text) 88%, var(--ds-accent)); }
+/* Label roll: the same text slides up and a copy takes its place (copy is aria-hidden, added by buttons.js) */
+.btn__roll { position: relative; display: inline-block; overflow: hidden; line-height: 1.25; }
+.btn__roll > span { display: block; transition: transform 420ms var(--ds-ease-standard); }
+.btn__roll > span + span { position: absolute; inset: 0; transform: translateY(110%); }
+.btn:active { scale: 0.97; }   /* the individual `scale` property composes with GSAP's inline transform (magnetic pull) */
+.btn[disabled], .btn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; scale: 1; }
+.btn[aria-busy="true"] { pointer-events: none; }
+.btn[aria-busy="true"]::after { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; animation: spin 700ms linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (hover: hover) and (pointer: fine) {
+  .btn:not([disabled]):hover::before { clip-path: circle(150% at var(--px) var(--py)); }
+  .btn--secondary:not([disabled]):hover { color: var(--ds-on-accent); border-color: var(--ds-accent); }
+  .btn:not([disabled]):hover .btn__roll > span:first-child { transform: translateY(-110%); }
+  .btn:not([disabled]):hover .btn__roll > span + span { transform: translateY(0); }
+}
+@media (pointer: coarse) { .btn { min-height: 48px; } }
+
+.icon-btn { display: inline-grid; place-items: center; width: var(--ds-control-h); height: var(--ds-control-h); min-width: 44px; min-height: 44px; border-radius: var(--ds-radius-pill); border: 1px solid var(--ds-border-strong); background: transparent; color: var(--ds-text); cursor: pointer; transition: scale var(--ds-dur-fast) var(--ds-ease-standard), background-color var(--ds-dur-base) var(--ds-ease-standard); }
+.icon-btn:active { scale: 0.95; }
+@media (hover: hover) and (pointer: fine) { .icon-btn:hover { background: color-mix(in srgb, var(--ds-text) 8%, transparent); } }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: clip; padding: clamp(96px, 14vh, 160px) clamp(20px, 4vw, 48px) clamp(40px, 8vh, 96px); isolation: isolate; }
+.hero--page { min-height: 70svh; }
+.hero::before { /* poster: also the fallback when WebGL is missing */
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: radial-gradient(80% 70% at 78% 40%, color-mix(in srgb, var(--ds-text) 9%, transparent), transparent 70%);
+}
+.hero__canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; opacity: 0; transition: opacity 600ms var(--ds-ease-standard); }
+.hero__canvas[data-state="ready"] { opacity: 1; }
+.hero__canvas[data-state="fallback"] { display: none; }
+/* The scene fades out where the headline sits, so text keeps its contrast (a mask, not an overlay: no extra layer to paint) */
+.hero__canvas { -webkit-mask-image: linear-gradient(100deg, transparent 34%, #000 74%); mask-image: linear-gradient(100deg, transparent 34%, #000 74%); }
+@media (max-aspect-ratio: 23/20) { .hero__canvas { -webkit-mask-image: linear-gradient(to bottom, #000 48%, transparent 76%); mask-image: linear-gradient(to bottom, #000 48%, transparent 76%); } }
+.hero__inner { max-width: 1280px; width: 100%; margin: 0 auto; }
+.hero__title { max-width: 14ch; font-size: clamp(3rem, 9vw, 8rem); font-weight: var(--ds-fw-display); line-height: 0.98; letter-spacing: -0.035em; text-wrap: balance; }
+.hero__lead { max-width: 52ch; margin-top: var(--ds-space-6); font-size: clamp(1.0625rem, 1.5vw, 1.25rem); line-height: 1.5; color: var(--ds-text-subtle); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--ds-space-3); margin-top: var(--ds-space-6); }
+
+/* ---------- Sections ---------- */
+.section { max-width: 1280px; margin: 0 auto; padding: clamp(80px, 14vh, 180px) clamp(20px, 4vw, 48px); }
+.section__title { max-width: 18ch; font-size: clamp(2rem, 5vw, 4rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance; }
+.rows { margin-top: clamp(40px, 8vh, 96px); border-top: 1px solid var(--ds-border-strong); }
+.row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--ds-space-6); padding: var(--ds-space-6) 0; border-bottom: 1px solid var(--ds-border-strong); }
+.row h3 { font-size: var(--ds-fs-h3); font-weight: var(--ds-fw-h3); line-height: var(--ds-lh-h3); }
+.row p { max-width: 65ch; color: var(--ds-text-subtle); }
+@media (max-width: 720px) { .row { grid-template-columns: 1fr; gap: var(--ds-space-2); } }
+
+.marquee { overflow: clip; padding: clamp(24px, 5vh, 64px) 0; border-block: 1px solid var(--ds-border-strong); }
+.marquee__track { display: flex; width: max-content; gap: 0.6em; font-size: clamp(3rem, 11vw, 9rem); font-weight: 400; letter-spacing: -0.04em; line-height: 1; white-space: nowrap; will-change: transform; }
+.marquee__track span { padding-right: 0.6em; }
+
+.stage { margin-top: clamp(32px, 6vh, 72px); padding: clamp(28px, 6vw, 72px); background: var(--ds-surface); border-radius: var(--ds-radius-xl); box-shadow: var(--ds-shadow-m); }
+.stage__group { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-3); }
+.stage__note { margin-top: var(--ds-space-5); font-size: var(--ds-fs-small); color: var(--ds-text-subtle); }
+
+.closing { display: grid; justify-items: start; gap: var(--ds-space-6); max-width: 1280px; margin: 0 auto; padding: clamp(80px, 16vh, 200px) clamp(20px, 4vw, 48px); }
+.closing__title { font-size: clamp(2.5rem, 8vw, 7rem); font-weight: 400; line-height: 1; letter-spacing: -0.035em; max-width: 12ch; }
+.footer { padding: var(--ds-space-6) clamp(20px, 4vw, 48px); font-size: var(--ds-fs-small); color: var(--ds-text-subtle); border-top: 1px solid var(--ds-border); }
+
+/* SplitText masks lines; keep descenders visible */
+.split-line { overflow: clip; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+
+/* Reduced motion (Astryx rule): no travel, scale or spring. Content is fully visible; the covers disappear at once. */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn::before, .btn__roll > span, .icon-btn { transition: none; }
+  .btn:active, .icon-btn:active { scale: 1; }
+  .preloader, .curtain { display: none !important; }
+  html.is-loading, html.pt-enter { overflow: auto; }
+}

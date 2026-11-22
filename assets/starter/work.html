@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-transition="curtain">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work | Brand: TODO(content)</title>
+  <meta name="description" content="TODO(content)">
+  <meta name="theme-color" content="#1B1B1B">
+  <script>
+    (function (d) {
+      try {
+        d.classList.add('js');
+        if (sessionStorage.getItem('pt')) d.classList.add('pt-enter');
+        else if (d.getAttribute('data-transition') === 'view' && 'onpagereveal' in window && sessionStorage.getItem('seen') && document.referrer.indexOf(location.origin) === 0) d.classList.add('pt-native'); /* the browser already ran the transition */
+        else { d.classList.add('is-loading'); if (sessionStorage.getItem('seen')) d.classList.add('is-return'); }
+        var t = localStorage.getItem('theme'); if (t) d.setAttribute('data-theme', t);
+        setTimeout(function () { d.classList.remove('is-loading', 'pt-enter'); }, 9000);
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <link rel="preload" href="ds/fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="ds/fonts/figtree-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="ds/fonts.css">
+  <link rel="stylesheet" href="ds/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+  <!-- <link rel="stylesheet" href="css/view-transition.css"> -->
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.187.0/examples/jsm/"
+    } }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__panel"></div>
+    <div class="preloader__content">
+      <span class="preloader__brand">Brand</span>
+      <span class="preloader__count"><span data-count>000</span></span>
+      <span class="preloader__bar"><i data-bar></i></span>
+    </div>
+  </div>
+  <div class="curtain" aria-hidden="true"><span class="curtain__label"></span></div>
+
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="index.html" data-transition-label="Home">Brand</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#principles" data-transition-label="Principles">Principles</a>
+      <a href="index.html#buttons" data-transition-label="Buttons">Buttons</a>
+      <a href="work.html" data-transition-label="Work" aria-current="page">Work</a>
+    </nav>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--page" data-hero>
+      <div class="hero__inner">
+        <h1 class="hero__title" data-split>Work that earns the transition.</h1><!-- TODO(content) -->
+        <p class="hero__lead" data-hero-fade>TODO(content): what the visitor will find on this page.</p>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn btn--secondary" href="index.html" data-roll data-transition-label="Home">Back home</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <ul class="rows">
+        <li class="row" data-reveal><h3>Project one</h3><p>TODO(content): real project, real result.</p></li>
+        <li class="row" data-reveal><h3>Project two</h3><p>TODO(content)</p></li>
+        <li class="row" data-reveal><h3>Project three</h3><p>TODO(content)</p></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer"><span>TODO(content): credits, licence, contact</span></footer>
+</body>
+</html>

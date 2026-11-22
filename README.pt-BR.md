@@ -29,6 +29,7 @@
 | Camada | O que faz |
 |---|---|
 | **Taste** | Inventário do cliente, três direções, uma frase-ideia, um momento-assinatura e um gate contra o "visual de template". |
+| **O kit padrão** | Todo site parte de um starter funcional com o Astryx: preloader antes do hero, scroll suave com GSAP + Lenis, transição de página (cortina ou View Transitions nativas), botões profissionais e um hero em Three.js com fallbacks. `node scripts/new-site.mjs <dir>` cria o projeto. |
 | **Scroll craft** | Beats de scroll, estruturas de página, pins, sequências de quadros, câmera 3D, orçamentos e fallbacks, mais o método completo do [scroll-craft](https://github.com/nateherkai/scroll-craft) e seu motor sem dependências (incluídos). |
 | **Movimento de interface** | Como botões, menus, popovers, toasts e arrastes devem se mover: quando não animar, curvas, tempos, e skills de revisão e auditoria de [Emil Kowalski](https://github.com/emilkowalski/skills) (incluídas). |
 | **Graft** | Portar um recurso de um repositório público do GitHub só depois de passar por um gate de licença, escopo, stack, qualidade e manutenção. |
@@ -156,10 +157,12 @@ awwards-skill/
 ├── THIRD_PARTY_NOTICES.md
 ├── demo/                          # o site da demo ao vivo (opcional, não faz parte da skill)
 ├── scripts/
+│   ├── new-site.mjs               # cria um site a partir de assets/starter
 │   ├── pick-design-system.mjs     # seletor de design system
 │   ├── contrast-check.mjs         # auditoria WCAG dos tokens
 │   ├── codegraph.mjs              # graphify offline (graph.json, relatório, HTML)
 │   └── atelier/                   # atelier.mjs · selftest.mjs · lib/ · models/
+├── assets/starter/                # preloader · Lenis + GSAP · transições · botões · hero Three.js
 └── assets/design-systems/         # tokens.css × 6 (o Astryx também traz as fontes Figtree)
 ```
 

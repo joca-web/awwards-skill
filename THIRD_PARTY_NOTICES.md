@@ -12,4 +12,6 @@ awwwards-skill is MIT licensed (see `LICENSE`). It bundles the following third-p
 
 The MIT notices require the copyright and permission text to stay with the files; the `LICENSE` files above are the unmodified originals. The OFL requires the licence to stay with the fonts and forbids selling the font by itself.
 
+Loaded from a CDN by `assets/starter/` and never copied into this repository: GSAP with ScrollTrigger and SplitText (GreenSock, under the GSAP "no charge" standard licence, https://gsap.com/standard-license), Lenis (Darkroom Engineering, MIT) and three.js (MIT). A few CSS rules from Lenis's `lenis.css` (MIT) are restated in `assets/starter/css/site.css`.
+
 Not bundled, named only: Apple, Google, Microsoft, Atlassian and Salesforce design systems are reproduced as audited approximations of their public principles (see `references/05-design-systems.md` §8); their typefaces and marks are not redistributed. "Astryx", "Meta", "Tripo" and other names belong to their owners, and nothing here is official material from them.

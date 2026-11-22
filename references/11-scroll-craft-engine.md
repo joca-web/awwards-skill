@@ -42,7 +42,7 @@ All paths are under `vendor/scroll-craft/`; read `SKILL.upstream.md` first, then
 | Led by complex ScrollTrigger timelines, WebGL distortion or shaders, page transitions, Flip filters, draggable sliders, or a Three.js stage | **GSAP components** (`$I3D`, `02-scrollcraft.md` §3) |
 | Mostly ordinary sections with some reveals | Either; prefer the lighter one already in the project |
 
-Never run both engines on the same section. A page may use scroll-craft acts for the story and an `$I3D` stage for one 3D object if they do not both drive the same element; when in doubt keep one engine.
+The default build (`12-hero-motion-system.md`) is GSAP + Lenis + a Three.js hero; the scroll-craft engine is the alternative when the page is led by scrubbed video or frame sequences. Never run both engines on the same section. A page may use scroll-craft acts for the story and an `$I3D` stage for one 3D object if they do not both drive the same element; when in doubt keep one engine.
 
 The engine does not generate DOM. You write semantic HTML (real `h1`, `p`, links) and mark it up, for example `<section data-sc-act="pin" data-sc-span="2.5">`, `data-sc-scrub` on a `<video>`, `data-sc-cue="0.1 0.5"`, `data-sc-kinetic="lines"`, `data-sc-reveal="up"`. Never edit the engine per project; theme it with tokens and bespoke JS in the page driven off `--sc-p`.
 
