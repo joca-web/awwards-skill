@@ -34,6 +34,7 @@
 |---|---|
 | **Taste** | Client inventory, three art directions, one idea sentence, one signature moment, and an anti-"template look" gate. |
 | **The default kit** | Every site starts from a working starter on Astryx: a preloader before the hero, GSAP + Lenis smooth scroll, a page transition (curtain or native View Transitions), professional buttons and a Three.js hero with fallbacks. `node scripts/new-site.mjs <dir>` scaffolds it. |
+| **Motion for React** | In React apps the same kit runs on Motion (Framer Motion): preloader and hero intro with variants, `AnimatePresence`, `layoutId`, `useScroll`, `LazyMotion`, reduced motion. Patterns in `references/13-motion-react.md`. |
 | **Scroll craft** | Scroll beats, page structures, pins, frame sequences, 3D camera moves, budgets and fallbacks, plus the full [scroll-craft](https://github.com/nateherkai/scroll-craft) method and its dependency-free engine (bundled). |
 | **UI motion craft** | How controls, menus, popovers, toasts and drags should move: when not to animate, easing, timing, review and audit skills from [Emil Kowalski](https://github.com/emilkowalski/skills) (bundled). |
 | **Graft** | Port a feature from a public GitHub repo only after a licence, scope, stack, quality and maintenance gate. |
@@ -153,6 +154,8 @@ awwwards-skill/
 │   ├── 09-blender-on-request.md   # Blender only when asked
 │   ├── 10-ui-motion-craft.md      # how controls move (Emil Kowalski), routes to vendor/
 │   ├── 11-scroll-craft-engine.md  # scroll-craft method and engine, fingerprint gate
+│   ├── 12-hero-motion-system.md   # the default kit: preloader, Lenis, GSAP, transitions, buttons, Three.js
+│   ├── 13-motion-react.md         # Motion for React (Framer Motion) on the same kit
 │   └── ds/                        # apple · google · fluent2 · atlassian · salesforce · astryx
 ├── vendor/                        # third-party skills kept unchanged with their licences
 │   ├── emilkowalski-skills/       # 19 skills + cheatsheets (MIT)

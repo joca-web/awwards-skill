@@ -10,6 +10,9 @@ Everything here belongs to its original authors and keeps its own licence (all t
 
 The tokens in `assets/design-systems/astryx/` and the Figtree fonts (SIL OFL 1.1, licence file next to them) are derived from the Neutral theme at the commit above. Licence texts for everything are collected in `../THIRD_PARTY_NOTICES.md`.
 
+## Evaluated and not bundled
+- **https://github.com/sami12344/framer-motion** (commit `da37e0b`, 2023-08-25). Requested as "Framer Motion". It is not the library: it is a personal Vite + React demo app (about 230 lines of TSX, boxes animated with `framer-motion` v10) and the repository has **no LICENSE file** (the README says MIT but the file is missing), so nothing may be copied from it. The skill uses the official library instead: `motiondivision/motion` (MIT, © Motion B.V.), documented in `references/13-motion-react.md`. It is not vendored: it is installed with `npm install motion`.
+
 ## Not included, on purpose
 - **Astryx's source monorepo** (`packages/core`, `lab`, `native`, 150+ components, tests: about 400 MB and React-specific). Install the real packages with npm when you build a React app; see `references/ds/astryx.md`.
 - **scroll-craft's `media/` images** (6.5 MB of sample screenshots).

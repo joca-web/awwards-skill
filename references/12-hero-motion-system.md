@@ -14,6 +14,8 @@ Every site made with this skill starts from the same professional kit. It is not
 9. Starter, scaffold, and how to adapt it
 10. Gate checks, and what was verified
 
+> React app? The same rules apply with Motion for React (Framer Motion) as the engine for components: see `13-motion-react.md`. This file's starter is plain HTML, CSS and JS.
+
 ## 1. The order of events (the rule)
 
 1. **A cover is always up before the first hero section is seen.** Fresh load: the preloader. Arriving from another page of the site: the page curtain. Never a bare hero popping in.

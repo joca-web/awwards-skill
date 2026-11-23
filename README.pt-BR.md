@@ -30,6 +30,7 @@
 |---|---|
 | **Taste** | Inventário do cliente, três direções, uma frase-ideia, um momento-assinatura e um gate contra o "visual de template". |
 | **O kit padrão** | Todo site parte de um starter funcional com o Astryx: preloader antes do hero, scroll suave com GSAP + Lenis, transição de página (cortina ou View Transitions nativas), botões profissionais e um hero em Three.js com fallbacks. `node scripts/new-site.mjs <dir>` cria o projeto. |
+| **Motion para React** | Em apps React o mesmo kit roda com o Motion (Framer Motion): preloader e intro do hero com variants, `AnimatePresence`, `layoutId`, `useScroll`, `LazyMotion`, movimento reduzido. Padrões em `references/13-motion-react.md`. |
 | **Scroll craft** | Beats de scroll, estruturas de página, pins, sequências de quadros, câmera 3D, orçamentos e fallbacks, mais o método completo do [scroll-craft](https://github.com/nateherkai/scroll-craft) e seu motor sem dependências (incluídos). |
 | **Movimento de interface** | Como botões, menus, popovers, toasts e arrastes devem se mover: quando não animar, curvas, tempos, e skills de revisão e auditoria de [Emil Kowalski](https://github.com/emilkowalski/skills) (incluídas). |
 | **Graft** | Portar um recurso de um repositório público do GitHub só depois de passar por um gate de licença, escopo, stack, qualidade e manutenção. |
@@ -149,6 +150,8 @@ awwards-skill/
 │   ├── 09-blender-on-request.md   # Blender só sob pedido
 │   ├── 10-ui-motion-craft.md      # como os controles se movem (Emil Kowalski), aponta para vendor/
 │   ├── 11-scroll-craft-engine.md  # método e motor do scroll-craft, gate de impressão digital
+│   ├── 12-hero-motion-system.md   # o kit padrão: preloader, Lenis, GSAP, transições, botões, Three.js
+│   ├── 13-motion-react.md         # Motion para React (Framer Motion) sobre o mesmo kit
 │   └── ds/                        # apple · google · fluent2 · atlassian · salesforce · astryx
 ├── vendor/                        # skills de terceiros mantidas sem alteração, com suas licenças
 │   ├── emilkowalski-skills/       # 19 skills + cheatsheets (MIT)
