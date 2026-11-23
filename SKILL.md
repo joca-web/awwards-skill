@@ -17,10 +17,9 @@ A site or a 3D model looks professional when a long list of decisions were made 
 | **Scroll craft** | Beats, page structures, scroll devices (pins, wipes, frame sequences, 3D camera), budgets, fallbacks. Plus the full upstream scroll-craft method (eight page grammars, signature move, fingerprint gate, feeling curve) and its dependency-free engine | `references/02-scrollcraft.md`, `references/11-scroll-craft-engine.md`, `vendor/scroll-craft/` |
 | **UI motion craft** | How controls, menus, popovers, toasts and drags move: when to animate at all, easing, durations, press feedback, interruptibility, review and audit skills (Emil Kowalski) | `references/10-ui-motion-craft.md`, `vendor/emilkowalski-skills/` |
 | **Graft** | Bring a feature from a public GitHub repo into the project only after a licence, stack, scope, quality and maintenance gate | `references/03-graft.md` |
-| **Graphify** | Map a site or repo into a graph before redesign or graft; real Graphify when available, `scripts/codegraph.mjs` offline | `references/12-hero-motion-system.md` | Every new site: order of events, preloader, Lenis, GSAP, page transitions, buttons, Three.js hero, the Astryx design pass |
-| `references/13-motion-react.md` | A React app: Motion for React (Framer Motion) patterns on the same kit and tokens |
-| `assets/starter/`, `scripts/new-site.mjs` | Phase 5: the working kit, scaffolded into the project |
-| `references/04-graphify.md` |
+| **Graphify** | Map a site or repo into a graph before redesign or graft; real Graphify when available, `scripts/codegraph.mjs` offline | `references/04-graphify.md`, `scripts/codegraph.mjs` |
+| **The default kit** | Every new site: order of events, preloader, Lenis, GSAP, page transitions, professional buttons, Three.js hero, the Astryx design pass, plus a working starter | `references/12-hero-motion-system.md`, `assets/starter/`, `scripts/new-site.mjs` |
+| **Motion for React** | A React app: Motion (Framer Motion) patterns on the same kit and tokens | `references/13-motion-react.md` |
 | **Six design systems** | Apple, Google, Fluent 2, Atlassian, Salesforce and Meta's Astryx as one token contract, plus a selector and a "borrow mechanisms, never identity" rule | `references/05-design-systems.md`, `references/ds/*.md`, `assets/design-systems/*/tokens.css` |
 | **Atelier (3D)** | Code-first 3D: signed-distance modelling, field-measured AO and curvature, UV atlas, baked albedo / ORM / normal maps, LODs, silhouette-to-mesh, .glb, software preview. Node only, no Blender | `references/06-3d-atelier.md`, `scripts/atelier/` |
 | **Generators** | The honest route to Tripo-class organic models: a generator service, then cleanup and placement | `references/07-3d-generators.md` |
